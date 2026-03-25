@@ -68,14 +68,8 @@ export default function AboutPage() {
             <div className="bg-white border border-gray-200 rounded-lg p-8">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Contact & Feedback</h2>
               <p className="text-gray-600 text-base leading-relaxed mb-4">
-                We&apos;re constantly improving AI Literacy Lab based on feedback from
-                educators and students. Have suggestions or questions?
-              </p>
-              <p className="text-base text-gray-600">
-                Email:{" "}
-                <a href="mailto:feedback@ailiteracylab.edu" className="text-gray-900 hover:underline">
-                  feedback@ailiteracylab.edu
-                </a>
+                Have suggestions or questions? 
+                Email: cate.barry@gmail.com
               </p>
             </div>
   
