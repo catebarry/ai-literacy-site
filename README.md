@@ -1,24 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Literacy Lab
+An interactive educational website designed to help students and teachers understand how AI systems work—and where they can go wrong.
+
+The goal of this project is to move beyond passive explanations and instead provide hands-on, experiential learning through activities that demonstrate real AI behaviors like hallucinations, sycophancy, bias, and more.
+
+## Project Overview
+The website contains a structured as a set of interactive modules, each focused on a specific concept or risk in AI.
+
+Each module includes:
+- A short explanation of the concept
+- A guided interactive activity
+- Reflection prompts to reinforce learning
+
+Tech Stack
+- Next.js (App Router)
+- React
+- Tailwind CSS
+- Lucide Icons
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### 1. Clone the repo
+```
+git clone https://github.com/YOUR-USERNAME/ai-literacy-site.git
+cd ai-literacy-site
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependences
+`npm install`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run the development server
+`npm run dev`
+Then open: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Development
+Modify `page.tsx` files to edit the webpages. The folder path represents the url link. The page auto-updates as you edit the files.
 
 ## Learn More
 
