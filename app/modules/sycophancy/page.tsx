@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, BookOpen, CheckCircle } from "lucide-react";
+import { ArrowLeft, BookOpen } from "lucide-react";
 
 export default function SycophancyModule() {
   return (
@@ -38,8 +38,11 @@ export default function SycophancyModule() {
           <p className="text-lg font-semibold text-gray-900 mb-2">Instructions</p>
           <p className="text-base text-gray-600 leading-relaxed mb-3">
             Chat with DisagreeBot below — an AI that pushes back on whatever you say.
-            Try making a claim (correct or incorrect) and see how it responds. Notice
-            how a disagreeable AI feels different from one that always validates you.
+            Try making a claim (correct or incorrect) and observe how it responds.
+          </p>
+          <p className="text-base text-gray-600 leading-relaxed mb-3">
+            Pay attention to how it challenges your ideas. Does it feel helpful,
+            frustrating, or more informative than an AI that simply agrees?
           </p>
           <p className="text-base text-gray-400">
             Try statements like: &quot;I don&apos;t think I need to do homework&quot; or &quot;I read that climate change isn&apos;t real&quot;
@@ -59,15 +62,17 @@ export default function SycophancyModule() {
               rel="noopener noreferrer"
               className="text-base text-gray-400 hover:text-gray-600 transition-colors"
             >
-            {"Open in new tab ↗"}
+              Open in new tab ↗
             </a>
           </div>
-          <iframe
-            src="https://www.disagreebot.com"
-            className="w-full border-0"
-            style={{ height: "720px" }}
-            title="DisagreeBot"
-          />
+
+          <div className="h-[720px] w-full">
+            <iframe
+              src="https://www.disagreebot.com"
+              className="w-full h-full border-0"
+              title="DisagreeBot"
+            />
+          </div>
         </div>
 
         {/* What is Sycophancy */}
@@ -86,6 +91,27 @@ export default function SycophancyModule() {
           </p>
         </div>
 
+        {/* Reflection */}
+        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-gray-900 mb-4">
+            Reflect on What You Saw
+          </p>
+          <div className="space-y-3">
+            {[
+              "Which responses felt more convincing: agreement or disagreement?",
+              "Did the disagreeable AI ever feel more useful, even if less comfortable?",
+              "How might always agreeing with users be misleading?",
+              "Where have you seen AI agree too easily in real life?",
+            ].map((question) => (
+              <div
+                key={question}
+                className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700"
+              >
+                {question}
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
@@ -98,7 +124,7 @@ export default function SycophancyModule() {
             ].map((item) => (
               <a
                 key={item}
-                href='/'
+                href="/"
                 className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
               >
                 {"→ " + item}
@@ -107,12 +133,12 @@ export default function SycophancyModule() {
           </div>
         </div>
 
-
         {/* Footer Nav */}
         <div className="border-t border-gray-300 pt-6 flex items-center justify-between">
           <Link
             href="/"
-            className="px-5 py-2.5 text-base font-medium border border-gray-400 text-gray-800 rounded-md bg-white hover:bg-gray-100 transition-colors"          >
+            className="px-5 py-2.5 text-base font-medium border border-gray-400 text-gray-800 rounded-md bg-white hover:bg-gray-100 transition-colors"
+          >
             Back to Modules
           </Link>
         </div>
