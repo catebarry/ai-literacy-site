@@ -9,6 +9,7 @@ import {
   Brain,
   Shield,
   Eye,
+  Zap,
   Home as HomeIcon,
   BookOpen,
   Info,
@@ -45,6 +46,12 @@ const modules = [
     href: "/modules/privacy",
     icon: Shield,
   },
+  {
+    title: "Environmental Costs",
+    description: "The hidden energy and water behind AI",
+    href: "/modules/environment",
+    icon: Zap,
+  }
 ];
 
 const steps = [
