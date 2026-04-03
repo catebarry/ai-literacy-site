@@ -54,7 +54,7 @@ export default function SycophancyModule() {
           <div className="border-b border-gray-200 px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-lg">🤖</span>
-              <span className="text-base font-medium text-gray-700">DisagreeBot</span>
+              <span className="text-base font-medium text-gray-700">DisagreeBot — by Brinnae Bent</span>
             </div>
             <a
               href="https://www.disagreebot.com"
@@ -75,26 +75,32 @@ export default function SycophancyModule() {
           </div>
         </div>
 
-        {/* What is Sycophancy */}
-        <div className="border-2 border-purple-500 rounded-lg p-6 mb-4 bg-white">
-          <p className="text-base font-semibold text-purple-800 mb-2">What is Sycophancy?</p>
-          <p className="text-base text-purple-700 leading-relaxed mb-4">
+        {/* Explanation */}
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
+          <p className="text-base font-semibold text-purple-900">What is sycophancy?</p>
+          <p className="text-base text-purple-800 leading-relaxed">
             Sycophancy is when an AI system excessively agrees with you or tries to flatter you.
-            For example, it might say your argument is strong when it isn&apos;t, avoid correcting
-            mistakes, or praise you without giving useful feedback.
+            It might say your argument is strong when it isn&apos;t, avoid correcting mistakes, or
+            praise you without giving useful feedback.
           </p>
-          <p className="text-base font-semibold text-purple-800 mb-2">Why Does This Happen?</p>
-          <p className="text-base text-purple-700 leading-relaxed mb-4">
-            Many AI systems are designed to be helpful and pleasant to interact with. During training,
-            they are often rewarded for responses that people prefer — which can include agreeing with
-            the user. Over time, this can lead the system to prioritize agreement over accuracy.
-          </p>
-          <p className="text-base font-semibold text-purple-800 mb-2">Why Does This Matter?</p>
-          <p className="text-base text-purple-700 leading-relaxed">
-            An AI that always agrees might feel helpful, but it can be misleading. It may
-            reinforce incorrect ideas, give you false confidence, and prevent you from
-            thinking critically about what you&apos;re being told. 
-          </p>
+
+          <div className="border-t border-purple-200 pt-4 space-y-3">
+            <p className="text-base font-semibold text-purple-900">Why does this happen?</p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              Many AI systems are designed to be helpful and pleasant to interact with. During training,
+              they are often rewarded for responses that people prefer — which can include agreeing with
+              the user. Over time, this can lead the system to prioritize agreement over accuracy.
+            </p>
+          </div>
+
+          <div className="border-t border-purple-200 pt-4 space-y-3">
+            <p className="text-base font-semibold text-purple-900">Why does this matter?</p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              An AI that always agrees might feel helpful, but it can be misleading. It may reinforce
+              incorrect ideas, give you false confidence, and make it harder to think critically about
+              what you&apos;re being told.
+            </p>
+          </div>
         </div>
 
         {/* Reflection */}
@@ -171,15 +177,15 @@ export default function SycophancyModule() {
           <div className="space-y-2">
             {[
               {
-                label: "CNET: DisagreeBot and AI disagreement",
+                label: "CNET — DisagreeBot and AI disagreement",
                 href: "https://www.cnet.com/tech/services-and-software/this-ai-chatbot-is-built-to-disagree-with-you-and-its-better-than-chatgpt/",
               },
               {
-                label: "Georgetown: AI sycophancy research",
+                label: "Georgetown — AI sycophancy research",
                 href: "https://www.law.georgetown.edu/tech-institute/research-insights/insights/ai-sycophancy-impacts-harms-questions/",
               },
               {
-                label: "NYT: Seeking a Sounding Board? Beware the Eager-to-Please Chatbot",
+                label: "NYT — Seeking a Sounding Board? Beware the Eager-to-Please Chatbot",
                 href: "https://www.nytimes.com/2026/03/26/well/mind/ai-chatbots-relationships.html",
               },
             ].map((item) => (
