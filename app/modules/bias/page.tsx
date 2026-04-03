@@ -28,7 +28,7 @@ export default function BiasModule() {
           Bias: How AI Reflects Stereotypes
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
-          AI systems learn from large collections of human-created data. That means
+          AI systems learn from large collections of data. That means
           they can also learn patterns, assumptions, and stereotypes found in that
           data. In this module, you will explore how an image model connects social
           labels to certain kinds of faces — and why that matters.
@@ -42,36 +42,59 @@ export default function BiasModule() {
           </h2>
         </div>
 
-        {/* Instructions */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-lg font-semibold text-gray-900 mb-2">Instructions</p>
-          <p className="text-base text-gray-600 leading-relaxed mb-3">
-            Open the Latent Gaze activity in a new tab. Scroll down until you reach
-            the large grid of blurred faces. Each face represents a composite image
-            built from many AI-generated portraits connected to a social label.
-          </p>
-          <p className="text-base text-gray-600 leading-relaxed mb-3">
-            Click on individual faces to reveal the label associated with each one.
-            Then compare different labels and look for patterns in age, gender
-            presentation, expression, clothing, and race or ethnicity cues.
-          </p>
-          <p className="text-base text-gray-400">
-            Ask yourself: what does the model seem to assume about different kinds
-            of people?
-          </p>
+        <p className="text-lg font-semibold text-gray-900 mb-2">Instructions</p>
+        <p className="text-base text-gray-600 leading-relaxed">
+          Latent Gaze is an interactive project that visualizes how an AI image model interprets
+          social labels. Open it in a new tab, then scroll down to the large grid of blurred faces.
+          Click individual faces to reveal the label associated with each one — then compare across
+          labels and look for patterns in age, gender presentation, expression, clothing, and
+          racial or ethnic cues.
+        </p>
+      </div>
+
+      {/* Embedded Latent Gaze */}
+      <div className="bg-white border border-gray-200 rounded-lg mb-4 overflow-hidden">
+        <div className="border-b border-gray-200 px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-base font-medium text-gray-700">Latent Gaze — by Bochu Ding</span>
+          </div>
+          <a
+            href="https://bd1ng.github.io/latent-gaze/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-base text-gray-400 hover:text-gray-600 transition-colors"
+          >
+            Open in new tab ↗
+          </a>
         </div>
 
-        {/* Screenshot Preview */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-lg font-semibold text-gray-900 mb-3">
-            What to Look For
-          </p>
-          <p className="text-base text-gray-600 leading-relaxed mb-4">
-            This is the section of the Latent Gaze site you should look for. Once
-            you scroll to the grid of faces, click on different images to see the
-            label each face is associated with.
-          </p>
+        <div className="flex flex-col items-center text-center gap-5 px-8 py-10">
+          <div className="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center text-3xl">
+            👁️
+          </div>
+          <div>
+            <p className="text-base font-semibold text-gray-900 mb-2">
+              What does the model see?
+            </p>
+            <p className="text-base text-gray-500 max-w-lg leading-relaxed">
+              Scroll to the face grid, click individual faces to reveal their labels,
+              and compare across categories. Look for patterns in age, gender, expression,
+              and racial or ethnic cues.
+            </p>
+          </div>
+          <a
+            href="https://bd1ng.github.io/latent-gaze/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 bg-gray-900 text-white text-sm font-medium px-6 py-2.5 rounded-md hover:bg-gray-700 transition-colors"
+          >
+            Open Latent Gaze ↗
+          </a>
+        </div>
 
+        <div className="border-t border-gray-200 px-6 pb-6 pt-5">
+          <p className="text-sm text-gray-400 mb-3">Look for this section on the site:</p>
           <div className="overflow-hidden rounded-lg border border-gray-200">
             <Image
               src="/latent-gaze-preview.png"
@@ -82,71 +105,33 @@ export default function BiasModule() {
             />
           </div>
         </div>
+      </div>
 
-        {/* Activity Launch */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-lg font-semibold text-gray-900 mb-2">
-            Open the Activity
-          </p>
-          <p className="text-base text-gray-600 leading-relaxed mb-4">
-            Latent Gaze is an external interactive project. Open it in a new tab,
-            explore the face grid, and then come back here to reflect on what you
-            noticed.
-          </p>
-
-          <a
-            href="https://bd1ng.github.io/latent-gaze/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-2.5 text-base font-medium bg-gray-900 text-white rounded-md hover:bg-gray-700 transition-colors"
-          >
-            Open Latent Gaze ↗
-          </a>
-
-          <p className="text-sm text-gray-400 mt-3">
-            Keep this page open and return after exploring the activity.
-          </p>
-        </div>
 
         {/* Explanation */}
-        <div className="border-2 border-purple-500 rounded-lg p-6 mb-4 bg-white">
-          <p className="text-base font-semibold text-purple-800 mb-2">
-            What Is Latent Gaze Showing You?
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
+          <p className="text-base font-semibold text-purple-900">
+            What is Latent Gaze showing you?
           </p>
-          <p className="text-base text-purple-700 leading-relaxed mb-4">
-            Latent Gaze explores how an AI image model interprets social labels like
-            <span className="font-medium"> immigrant</span>,{" "}
-            <span className="font-medium"> CEO</span>, or{" "}
-            <span className="font-medium"> teacher</span>. For each label, the model
-            was used to generate thousands of AI portraits. Those portraits were
-            then merged into a single composite image.
+          <p className="text-base text-purple-800 leading-relaxed">
+            For each social label — like immigrant, CEO, or teacher — the model generated thousands
+            of AI portraits, then merged them into a single composite image. That composite is not a
+            real person. It is a picture of the model&apos;s overall pattern: what it tends to &ldquo;see&rdquo;
+            when given that label.
           </p>
-          <p className="text-base text-purple-700 leading-relaxed">
-            That means each composite is not a real person. It is a picture of the
-            model&apos;s overall pattern — what the model tends to “see” when it is
-            given that label. If certain features appear again and again, that
-            suggests the model has learned to associate those traits with that
-            category.
-          </p>
-        </div>
 
-        {/* Why This Matters */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-2">
-            Why This Matters
-          </p>
-          <p className="text-base text-gray-600 leading-relaxed mb-4">
-            In this activity, the bias is visible: you can actually see patterns in
-            the generated faces. But many AI systems do not make their assumptions
-            this obvious. They may affect search results, recommendations, hiring,
-            healthcare, or lending without clearly showing what patterns they
-            learned.
-          </p>
-          <p className="text-base text-gray-600 leading-relaxed">
-            Latent Gaze helps make one important idea concrete: AI systems are not
-            neutral. They learn from data, and that data can contain stereotypes,
-            imbalances, and social assumptions that show up in the outputs.
-          </p>
+        
+          <div className="border-t border-purple-200 pt-4">
+            <p className="text-base font-semibold text-purple-900 mb-3">
+              Why does this matter?
+            </p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              AI systems are not neutral. They learn from data, and that data can carry stereotypes and
+              social assumptions that surface in the outputs. This activity makes bias visible — but most
+              AI systems do not. The same learned patterns can quietly affect hiring tools, search results,
+              healthcare recommendations, and lending decisions without showing you what they assumed.
+            </p>
+          </div>
         </div>
 
         {/* Reflection */}
@@ -166,23 +151,54 @@ export default function BiasModule() {
           </div>
         </div>
 
+        {/* What You Can Do */}
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-green-900 mb-4">
+            What You Can Do
+          </p>
+
+          <ul className="space-y-3 text-base text-green-800">
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Ask who built a system and what their incentives are</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Ask what data a system was trained on and recognize that bias in AI is not always intentional</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Be skeptical of AI outputs used in high-stakes decisions like hiring, financial lending, or healthcare</span>
+            </li>
+
+          </ul>
+        </div>
+
         {/* Learn More */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
+        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
-          <div className="space-y-2">
-            {[
-              "Read more about bias in AI systems",
-              "Teacher resources and lesson plans",
-              "Related research and articles",
-            ].map((item) => (
-              <a
-                key={item}
-                href="/"
-                className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
-              >
-                {"→ " + item}
-              </a>
-            ))}
+
+          <div className="space-y-5">
+            <div>
+              <div className="space-y-2">
+                <a href="https://www.chapman.edu/ai/bias-in-ai.aspx" target="_blank" rel="noopener noreferrer"
+                  className="flex items-start gap-1.5 text-base text-blue-600 hover:underline">
+                  → Chapman University — Bias in AI: What it is and Why it Matters
+                </a>
+                <a href="https://www.ajl.org/about" target="_blank" rel="noopener noreferrer"
+                  className="flex items-start gap-1.5 text-base text-blue-600 hover:underline">
+                  → Algorithmic Justice League — What is algorithmic bias and why does it matter?
+                </a>
+                <a href="https://www.codedbias.com/about" target="_blank" rel="noopener noreferrer"
+                  className="flex items-start gap-1.5 text-base text-blue-600 hover:underline">
+                  → Coded Bias — documentary about facial recognition and racial bias in AI systems
+                </a>
+                <a href="https://github.com/bd1ng/latent-gaze" target="_blank" rel="noopener noreferrer"
+                  className="flex items-start gap-1.5 text-base text-blue-600 hover:underline">
+                  → Latent Gaze GitHub — explore the code and read more about the project
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
