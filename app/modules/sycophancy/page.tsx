@@ -119,6 +119,35 @@ export default function SycophancyModule() {
           </div>
         </div>
 
+        {/* What You Can Do */}
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-green-900 mb-4">
+            What You Can Do
+          </p>
+
+          <ul className="space-y-3 text-base text-green-800">
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Ask follow-up questions like “Are you sure?” or “What evidence supports that?”</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Rephrase prompts to invite critique (e.g. “What are the weaknesses of this idea?”)</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Don’t assume agreement means accuracy — verify important claims elsewhere</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Notice when an AI is overly flattering or avoids giving specific feedback</span>
+            </li>
+          </ul>
+        </div>
+
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
           <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
