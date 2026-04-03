@@ -58,12 +58,12 @@ const steps = [
   {
     number: 1,
     title: "Try it out",
-    description: "Select a topic and complete the interactive exercises",
+    description: "Select a topic and complete the interactive exercise",
   },
   {
     number: 2,
     title: "Understand",
-    description: "Learn what the activity revealed and why it matters",
+    description: "Learn what the activity reveals and why it matters",
   },
   {
     number: 3,
