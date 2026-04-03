@@ -128,22 +128,38 @@ export default function SycophancyModule() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Ask follow-up questions like “Are you sure?” or “What evidence supports that?”</span>
+              <span>Ask follow-up questions and demand evidence (e.g. “Are you sure?” “What evidence supports that?”)</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Rephrase prompts to invite critique (e.g. “What are the weaknesses of this idea?”)</span>
+              <span>Rephrase prompts to invite critique (e.g. “What are the weaknesses of this idea?” “What are the counter arguments?”)</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Don’t assume agreement means accuracy — verify important claims elsewhere</span>
+              <span>
+                Set{" "}
+                <a
+                  href="https://tetrate.io/learn/ai/system-prompts-guide"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-green-900"
+                >
+                  system prompts
+                </a>{" "}
+                to tell the AI to challenge your assumptions
+              </span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Notice when an AI is overly flattering or avoids giving specific feedback</span>
+              <span>Use neutral phrasing and avoid leading questions </span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Reset your chat session to clear the context </span>
             </li>
           </ul>
         </div>
