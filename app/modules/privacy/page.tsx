@@ -652,15 +652,21 @@ export default function PrivacyModule() {
         {/* Why it matters */}
         <div className="border-2 border-purple-500 rounded-lg p-6 mb-4 bg-white">
           <p className="text-base font-semibold text-purple-800 mb-2">
-            Why does privacy matter?
+            Why is it important to protect your privacy?
           </p>
           <p className="text-base text-purple-700 leading-relaxed mb-4">
-            Privacy is about more than secrecy. It affects autonomy, safety, and control.
-            When people do not know how their information is being used, they cannot make
-            informed decisions about what they share.
+            Privacy is not just secrecy. It is not about hiding a wrong. Consider the following situation: let's say
+            you are out in public but you know you are having a conversation with a friend. However,
+            you know that you are being watched and listened to by security cameras at all times. Would you 
+            feel comfortable speaking freely in that situation? Would your opinion on this change if you knew
+            for sure that you were not being watched and listened to at all times?
+
+            This is the same with AI tools. Whether it is about putting prompts into generative
+            AI tools or talking to customer service chatbots, it is important to remember that whatever
+            information you give them has the potential to be seen and used by the companies that run them.
           </p>
           <p className="text-base font-semibold text-purple-800 mb-2">
-            Why is this important for AI?
+            What can AI companies do with the information they collect from prompts?
           </p>
           <p className="text-base text-purple-700 leading-relaxed">
             AI systems may process prompts, uploaded files, account details, and behavioral
@@ -671,7 +677,7 @@ export default function PrivacyModule() {
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-lg font-semibold text-gray-900 mb-4">Reflect</p>
+          <p className="text-lg font-semibold text-gray-900 mb-2">Reflect</p>
           <div className="space-y-3">
             {[
               "Did seeing the possible route of a prompt change how you think about using AI tools?",
@@ -688,22 +694,62 @@ export default function PrivacyModule() {
           </div>
         </div>
 
+        {/* What You Can Do */}
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-green-900 mb-4">
+            What You Can Do
+          </p>
+
+          <ul className="space-y-3 text-base text-green-800">
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Be mindful of the information you share with AI tools</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Ask questions about data usage, retention, and sharing</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Know the terms and conditions that apply to the products you use</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Advocate for transparency and accountability in AI systems</span>
+            </li>
+          </ul>
+        </div>
+
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
           <p className="text-lg font-semibold text-gray-900 mb-4">Learn More</p>
           <div className="space-y-2">
             {[
-              "Questions to ask before sharing personal information with AI tools",
-              "How data retention and logging affect privacy",
-              "What cross-border data transfers mean for users",
+            {
+                title: "Why Privacy Matters Even If You Have Nothing to Hide",
+                url: "https://www.chronicle.com/article/why-privacy-matters-even-if-you-have-nothing-to-hide/",
+            },
+            {
+                title: "Stanford HAI — Privacy in the AI era",
+                url: "https://hai.stanford.edu/news/privacy-ai-era-how-do-we-protect-our-personal-information",
+            },
+            {
+                title: "ICO — Guide to data protection",
+                url: "https://ico.org.uk/for-the-public/",
+            },
             ].map((item) => (
-              <a
-                key={item}
-                href="#"
+            <a
+                key={item.title}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
-              >
-                {"→ " + item}
-              </a>
+            >
+                {"→ " + item.title}
+            </a>
             ))}
           </div>
         </div>
