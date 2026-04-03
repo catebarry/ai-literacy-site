@@ -79,15 +79,21 @@ export default function SycophancyModule() {
         <div className="border-2 border-purple-500 rounded-lg p-6 mb-4 bg-white">
           <p className="text-base font-semibold text-purple-800 mb-2">What is Sycophancy?</p>
           <p className="text-base text-purple-700 leading-relaxed mb-4">
-            Sycophancy is when AI systems are trained to please users by agreeing with them, even
-            when the user might be wrong. This can reinforce incorrect beliefs and prevent critical
-            thinking.
+            Sycophancy is when an AI system excessively agrees with you or tries to flatter you.
+            For example, it might say your argument is strong when it isn&apos;t, avoid correcting
+            mistakes, or praise you without giving useful feedback.
           </p>
-          <p className="text-base font-semibold text-purple-800 mb-2">Why This Matters</p>
+          <p className="text-base font-semibold text-purple-800 mb-2">Why Does This Happen?</p>
+          <p className="text-base text-purple-700 leading-relaxed mb-4">
+            Many AI systems are designed to be helpful and pleasant to interact with. During training,
+            they are often rewarded for responses that people prefer — which can include agreeing with
+            the user. Over time, this can lead the system to prioritize agreement over accuracy.
+          </p>
+          <p className="text-base font-semibold text-purple-800 mb-2">Why Does This Matter?</p>
           <p className="text-base text-purple-700 leading-relaxed">
-            An AI that always agrees might feel nice, but it doesn&apos;t help you learn or grow. Good
-            education and good AI should challenge your thinking, ask for evidence, and help you
-            see different perspectives — not just validate everything you already believe.
+            An AI that always agrees might feel helpful, but it can be misleading. It may
+            reinforce incorrect ideas, give you false confidence, and prevent you from
+            thinking critically about what you&apos;re being told. 
           </p>
         </div>
 
@@ -116,18 +122,30 @@ export default function SycophancyModule() {
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
           <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
+
           <div className="space-y-2">
             {[
-              "Read more about sycophancy: when AI always agrees with you",
-              "Teacher resources and lesson plans",
-              "Related research and articles",
+              {
+                label: "CNET: DisagreeBot and AI disagreement",
+                href: "https://www.cnet.com/tech/services-and-software/this-ai-chatbot-is-built-to-disagree-with-you-and-its-better-than-chatgpt/",
+              },
+              {
+                label: "Georgetown: AI sycophancy research",
+                href: "https://www.law.georgetown.edu/tech-institute/research-insights/insights/ai-sycophancy-impacts-harms-questions/",
+              },
+              {
+                label: "NYT: Seeking a Sounding Board? Beware the Eager-to-Please Chatbot",
+                href: "https://www.nytimes.com/2026/03/26/well/mind/ai-chatbots-relationships.html",
+              },
             ].map((item) => (
               <a
-                key={item}
-                href="/"
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
               >
-                {"→ " + item}
+                {"→ " + item.label}
               </a>
             ))}
           </div>
