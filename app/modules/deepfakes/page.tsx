@@ -25,10 +25,12 @@ export default function DeepfakesModule() {
           media is an important part of AI literacy.
         </p>
 
-        {/* Interactive Activity Header */}
-        <div className="flex items-center gap-2 mb-5">
-          <BookOpen size={20} strokeWidth={1.6} className="text-gray-700" />
-          <h2 className="text-xl font-semibold text-gray-900">Interactive Activity</h2>
+        {/* Step 1 header */}
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            1
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Try it out</h2>
         </div>
 
         {/* Instructions */}
@@ -52,20 +54,11 @@ export default function DeepfakesModule() {
         <div className="bg-white border border-gray-200 rounded-lg mb-4 overflow-hidden">
           <div className="border-b border-gray-200 px-6 py-3 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-lg">🖼️</span>
               <span className="text-base font-medium text-gray-700">
                 AI or Not — by Sightengine
               </span>
             </div>
-            <a
-              href="https://sightengine.com/ai-or-not"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open AI or Not quiz in a new tab"
-              className="text-base text-gray-400 hover:text-gray-600 transition-colors"
-            >
-              Open in new tab ↗
-            </a>
+
           </div>
 
           <div className="flex flex-col items-center text-center gap-5 px-8 py-12">
@@ -88,31 +81,50 @@ export default function DeepfakesModule() {
               aria-label="Launch the AI or Not activity in a new tab"
               className="flex items-center gap-2 bg-gray-900 text-white text-sm font-medium px-6 py-2.5 rounded-md hover:bg-gray-700 transition-colors"
             >
-              Launch Activity ↗
+              Open Activity ↗
             </a>
           </div>
         </div>
 
-        {/* What are Deepfakes */}
-        <div className="border-2 border-purple-500 rounded-lg p-6 mb-4 bg-white">
-          <p className="text-base font-semibold text-purple-800 mb-2">What are Deepfakes?</p>
-          <p className="text-base text-purple-700 leading-relaxed mb-4">
+        {/* Step 2 header */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            2
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Understand</h2>
+        </div>
+
+        {/* Explanation */}
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
+          <p className="text-base font-semibold text-purple-900">What are deepfakes?</p>
+          <p className="text-base text-purple-800 leading-relaxed">
             Deepfakes are AI-generated images, videos, or audio designed to look or
             sound real. They are created using generative models trained on large
             datasets of media.
           </p>
-          <p className="text-base font-semibold text-purple-800 mb-2">Why This Matters</p>
-          <p className="text-base text-purple-700 leading-relaxed">
-            As deepfakes become more realistic, it becomes easier to mislead people
-            and harder to trust media at first glance. AI literacy means learning not
-            just to detect fakes, but to stay careful even when detection is hard.
-          </p>
+
+          <div className="border-t border-purple-200 pt-4">
+            <p className="text-base font-semibold text-purple-900 mb-3">Why does this matter?</p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              As deepfakes become more realistic, it becomes easier to mislead people
+              and harder to trust media at first glance. AI literacy means learning not
+              just to detect fakes, but to be careful even when detection is impossible.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 3 header */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            3
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Reflect</h2>
         </div>
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-base font-semibold text-gray-900 mb-4">
-            Reflect on What You Saw
+            Questions to Consider
           </p>
           <div className="space-y-3">
             {[

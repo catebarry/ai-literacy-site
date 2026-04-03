@@ -57,13 +57,13 @@ const modules = [
 const steps = [
   {
     number: 1,
-    title: "Choose a Module",
-    description: "Select a topic you want to learn about",
+    title: "Try it out",
+    description: "Select a topic and complete the interactive exercises",
   },
   {
     number: 2,
-    title: "Try Activities",
-    description: "Complete interactive exercises to understand the concept",
+    title: "Understand",
+    description: "Learn what the activity revealed and why it matters",
   },
   {
     number: 3,

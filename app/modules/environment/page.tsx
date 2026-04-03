@@ -111,10 +111,12 @@ export default function EnvironmentModule() {
           makes those hidden costs tangible.
         </p>
 
-        {/* Interactive Activity Header */}
-        <div className="flex items-center gap-2 mb-5">
-          <BookOpen size={20} strokeWidth={1.6} className="text-gray-700" />
-          <h2 className="text-xl font-semibold text-gray-900">Interactive Activity</h2>
+        {/* Step 1 header */}
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            1
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Try it out</h2>
         </div>
 
         {/* Instructions */}
@@ -332,29 +334,48 @@ export default function EnvironmentModule() {
           </p>
         </div>
 
-        {/* Explainer */}
-        <div className="border-2 border-purple-500 rounded-lg p-6 mb-4 bg-white">
-          <p className="text-base font-semibold text-purple-800 mb-2">
-            {"Why does AI use water?"}
+        {/* Step 2 header */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            2
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Understand</h2>
+        </div>
+
+
+        {/* Explanation */}
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
+          <p className="text-base font-semibold text-purple-900">
+            Why does AI use water?
           </p>
-          <p className="text-base text-purple-700 leading-relaxed mb-4">
+          <p className="text-base text-purple-800 leading-relaxed">
             Data centers generate enormous heat. To prevent servers from overheating,
             cooling systems evaporate water — often millions of gallons per day per facility.
             This water is largely consumed, not recycled.
           </p>
-          <p className="text-base font-semibold text-purple-800 mb-2">
-            {"Why does this matter?"}
-          </p>
-          <p className="text-base text-purple-700 leading-relaxed">
-            Individual queries are small, but at scale — billions of daily queries — the
-            cumulative impact rivals that of entire nations. AI companies rarely disclose
-            their full energy or water footprints, making independent research difficult.
-          </p>
+          <div className="border-t border-purple-200 pt-4">
+            <p className="text-base font-semibold text-purple-900 mb-3">
+              Why does this matter?
+            </p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              Individual queries are small, but at scale — billions of daily queries — the
+              cumulative impact rivals that of entire nations. AI companies rarely disclose
+              their full energy or water footprints, making independent research difficult.
+            </p>
+          </div>
+        </div>
+
+        {/* Step 3 header */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            3
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Reflect</h2>
         </div>
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-lg font-semibold text-gray-900 mb-4">Reflect</p>
+          <p className="text-base font-semibold text-gray-900 mb-4">Questions to Consider</p>
           <div className="space-y-3">
             {[
               "Did the scale button change how you think about your AI use?",
@@ -373,7 +394,7 @@ export default function EnvironmentModule() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More</p>
+          <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
           <div className="space-y-2">
             {[
               "Epoch AI — How much energy does ChatGPT use? (2025)",

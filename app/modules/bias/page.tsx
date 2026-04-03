@@ -34,12 +34,12 @@ export default function BiasModule() {
           labels to certain kinds of faces — and why that matters.
         </p>
 
-        {/* Interactive Activity Header */}
-        <div className="flex items-center gap-2 mb-5">
-          <BookOpen size={20} strokeWidth={1.6} className="text-gray-700" />
-          <h2 className="text-xl font-semibold text-gray-900">
-            Interactive Activity
-          </h2>
+        {/* Step 1 header */}
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            1
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Try it out</h2>
         </div>
 
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
@@ -59,14 +59,6 @@ export default function BiasModule() {
           <div className="flex items-center gap-2">
             <span className="text-base font-medium text-gray-700">Latent Gaze — by Bochu Ding</span>
           </div>
-          <a
-            href="https://bd1ng.github.io/latent-gaze/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-base text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            Open in new tab ↗
-          </a>
         </div>
 
         <div className="flex flex-col items-center text-center gap-5 px-8 py-10">
@@ -89,7 +81,7 @@ export default function BiasModule() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-gray-900 text-white text-sm font-medium px-6 py-2.5 rounded-md hover:bg-gray-700 transition-colors"
           >
-            Open Latent Gaze ↗
+            Open Activity ↗
           </a>
         </div>
 
@@ -107,6 +99,13 @@ export default function BiasModule() {
         </div>
       </div>
 
+        {/* Step 2 header */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            2
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Understand</h2>
+        </div>
 
         {/* Explanation */}
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
@@ -134,10 +133,18 @@ export default function BiasModule() {
           </div>
         </div>
 
+        {/* Step 3 header */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            3
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Reflect</h2>
+        </div>
+
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-base font-semibold text-gray-900 mb-4">
-            Reflect on What You Saw
+            Questions to Consider
           </p>
           <div className="space-y-3">
             {reflectionQuestions.map((question) => (
