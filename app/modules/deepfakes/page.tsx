@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, BookOpen } from "lucide-react";
+import { ArrowLeft, BookOpen, ShieldAlertIcon } from "lucide-react";
 
 export default function DeepfakesModule() {
   return (
@@ -155,7 +155,7 @@ export default function DeepfakesModule() {
  
         {/* Content Advisory */}
         <div className="flex items-start gap-3 bg-amber-50 border border-amber-300 rounded-lg px-5 py-4 mb-4">
-          <TriangleAlert size={20} className="text-amber-500 mt-0.5 shrink-0" />
+          <ShieldAlertIcon size={20} className="text-amber-500 mt-0.5 shrink-0" />
           <div>
             <p className="text-sm font-semibold text-amber-800 mb-1">Content Advisory</p>
             <p className="text-sm text-amber-700 leading-relaxed">
