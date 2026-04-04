@@ -91,22 +91,22 @@ const MAP_STOPS: Record<
     y: number;
   }
 > = {
-  device: { x: 20, y: 38 },
+  device: { x: 20, y: 20 },
   app: { x: 28, y: 32 },
-  model: { x: 36, y: 36 },
-  logs: { x: 52, y: 28 },
-  review: { x: 74, y: 34 },
+  model: { x: 51, y: 18 },
+  logs: { x: 65, y: 25 },
+  review: { x: 88, y: 18 },
 };
 
 const LABEL_OFFSETS: Record<
   DataStop["id"],
   { dx: number; dy: number }
 > = {
-  device: { dx: -40, dy: -10 },
-  app: { dx: -20, dy: -55 },
-  model: { dx: 10, dy: -50 },
-  logs: { dx: 10, dy: -65 },
-  review: { dx: 10, dy: -45 },
+  device: { dx: -10, dy: -10 },
+  app: { dx: -10, dy: -10 },
+  model: { dx: -10, dy: -10 },
+  logs: { dx: -10, dy: -10 },
+  review: { dx: -10, dy: -10 },
 };
 
 const REGION_POSITIONS: Record<
@@ -191,16 +191,24 @@ export default function PrivacyModule() {
           companies have about you and what they can use this information for.
         </p>
 
-        {/* Interactive Activity Header */}
+        {/* Step 1 header */}
+        <div className="flex items-center gap-3 mb-5">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            1
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Try it out</h2>
+        </div>
+
+        {/* Interactive Activity Header
         <div className="flex items-center gap-2 mb-5">
           <Lock size={20} strokeWidth={1.6} className="text-gray-700" />
           <h2 className="text-xl font-semibold text-gray-900">Interactive Activity</h2>
-        </div>
+        </div> */}
 
         {/* Instructions */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-lg font-semibold text-gray-900 mb-2">
-            Trace where your prompt goes
+            Instructions
           </p>
           <p className="text-base text-gray-600 leading-relaxed mb-3">
             Type a sample prompt, then click the button to simulate what can happen after
@@ -212,14 +220,14 @@ export default function PrivacyModule() {
             Real data flows vary based on the product, region, account settings, and legal
             requirements.
           </p>
-          <p className="text-base text-gray-400">
+          <p className="text-base text-gray-600">
             The goal is to make hidden data flows more visible.
           </p>
         </div>
 
         {/* Prompt simulator */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6">
+          <div className="space-y-6">
             {/* Left side */}
             <div>
               <p className="text-lg font-semibold text-gray-900 mb-4">
@@ -232,7 +240,7 @@ export default function PrivacyModule() {
               <textarea
                 value={promptText}
                 onChange={(e) => setPromptText(e.target.value)}
-                rows={4}
+                rows={2}
                 className="w-full rounded-lg border border-gray-300 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900"
                 placeholder="Type a prompt here..."
               />
@@ -273,7 +281,7 @@ export default function PrivacyModule() {
               </div>
 
               {currentStop && (
-                <div className="mt-5 border border-blue-200 bg-blue-50 rounded-lg p-4">
+                <div className="border border-blue-200 bg-blue-50 rounded-lg p-5">
                   <p className="text-sm font-semibold text-blue-900 mb-1">
                     Current stop: {currentStop.title}
                   </p>
@@ -300,93 +308,32 @@ export default function PrivacyModule() {
               )}
             </div>
 
-            {/* Right side: world map style */}
-                        {/* Right side: world map with route */}
-            <div>
-              <p className="text-lg font-semibold text-gray-900 mb-4">
-                Simplified world route
-              </p>
+            <div className="w-full">
+            <p className="text-lg font-semibold text-gray-900 mb-4">
+                Where your data travels
+            </p>
 
-              <div className="rounded-2xl border border-gray-200 bg-white overflow-hidden">
-                <div className="relative h-[420px] bg-gradient-to-b from-sky-50 to-white">
+            <div className="w-full h-[400px] rounded-2xl border border-gray-200 bg-white overflow-hidden">
+                <div className="relative w-full h-full">
                   {/* World map */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-0 bg-center bg-contain bg-no-repeat opacity-60"
+                    style={{
+                        backgroundImage: "url('/world.svg')",
+                    }}>
                     <svg
-                        viewBox="0 0 100 55"
-                        className="w-full max-w-[600px] h-auto"
-                        preserveAspectRatio="xMidYMid meet"
+                    viewBox="0 0 100 55"
+                    className="w-full max-w-[900px] h-auto"
+                    preserveAspectRatio="xMidYMid meet"
                     >
                     {/* Ocean */}
                     <rect x="0" y="0" width="100" height="55" fill="transparent" />
-
-                    {/* Decorative grid */}
-                    {Array.from({ length: 9 }).map((_, i) => (
-                      <line
-                        key={`v-${i}`}
-                        x1={i * 12.5}
-                        y1="0"
-                        x2={i * 12.5}
-                        y2="55"
-                        stroke="#dbeafe"
-                        strokeWidth="0.15"
-                      />
-                    ))}
-                    {Array.from({ length: 6 }).map((_, i) => (
-                      <line
-                        key={`h-${i}`}
-                        x1="0"
-                        y1={i * 11}
-                        x2="100"
-                        y2={i * 11}
-                        stroke="#dbeafe"
-                        strokeWidth="0.15"
-                      />
-                    ))}
-
-                    {/* Very simplified continents */}
-                    <path
-                      d="M8 18 L14 13 L24 14 L30 18 L31 24 L27 29 L20 31 L15 28 L11 24 Z"
-                      fill="#e5e7eb"
-                      stroke="#cbd5e1"
-                      strokeWidth="0.3"
-                    />
-                    <path
-                      d="M22 30 L26 33 L27 40 L24 48 L20 44 L19 36 Z"
-                      fill="#e5e7eb"
-                      stroke="#cbd5e1"
-                      strokeWidth="0.3"
-                    />
-                    <path
-                      d="M44 16 L49 14 L55 16 L56 22 L53 26 L47 25 L44 21 Z"
-                      fill="#e5e7eb"
-                      stroke="#cbd5e1"
-                      strokeWidth="0.3"
-                    />
-                    <path
-                      d="M47 27 L52 29 L54 36 L52 46 L48 43 L46 35 Z"
-                      fill="#e5e7eb"
-                      stroke="#cbd5e1"
-                      strokeWidth="0.3"
-                    />
-                    <path
-                      d="M58 16 L67 14 L79 16 L87 21 L85 27 L77 29 L68 27 L61 24 Z"
-                      fill="#e5e7eb"
-                      stroke="#cbd5e1"
-                      strokeWidth="0.3"
-                    />
-                    <path
-                      d="M79 36 L84 39 L82 44 L76 42 L75 37 Z"
-                      fill="#e5e7eb"
-                      stroke="#cbd5e1"
-                      strokeWidth="0.3"
-                    />
 
                     {/* Arrow marker */}
                     <defs>
                       <marker
                         id="arrowhead"
-                        markerWidth="4"
-                        markerHeight="4"
+                        markerWidth="2"
+                        markerHeight="2"
                         refX="3.2"
                         refY="2"
                         orient="auto"
@@ -395,8 +342,8 @@ export default function PrivacyModule() {
                       </marker>
                       <marker
                         id="arrowheadMuted"
-                        markerWidth="4"
-                        markerHeight="4"
+                        markerWidth="2"
+                        markerHeight="2"
                         refX="3.2"
                         refY="2"
                         orient="auto"
@@ -461,7 +408,7 @@ export default function PrivacyModule() {
                             <circle
                               cx={pos.x}
                               cy={pos.y}
-                              r="3.4"
+                              r="2"
                               fill="none"
                               stroke="#60a5fa"
                               strokeWidth="0.5"
@@ -517,7 +464,7 @@ export default function PrivacyModule() {
                   })}
 
                   {/* Legend */}
-                  <div className="absolute left-4 top-4 bg-white/90 border border-gray-200 rounded-xl px-3 py-2">
+                    <div className="absolute left-4 top-4 bg-white/90 border border-gray-200 rounded-xl px-3 py-2">
                     <p className="text-xs font-semibold text-gray-800 mb-2">
                       Map legend
                     </p>
@@ -609,7 +556,7 @@ export default function PrivacyModule() {
           </div>
         </div>
 
-        {/* Key ideas */}
+        {/* Key ideas
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-lg font-semibold text-gray-900 mb-4">Key Ideas</p>
           <div className="space-y-4">
@@ -647,14 +594,22 @@ export default function PrivacyModule() {
               </div>
             ))}
           </div>
+        </div> */}
+
+        {/* Step 2 header */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            2
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Understand</h2>
         </div>
 
         {/* Why it matters */}
-        <div className="border-2 border-purple-500 rounded-lg p-6 mb-4 bg-white">
-          <p className="text-base font-semibold text-purple-800 mb-2">
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
+          <p className="text-base font-semibold text-purple-900">
             Why is it important to protect your privacy?
           </p>
-          <p className="text-base text-purple-700 leading-relaxed mb-4">
+          <p className="text-base text-purple-800 leading-relaxed">
             Privacy is not just secrecy. It is not about hiding a wrong. Consider the following situation: let's say
             you are out in public but you know you are having a conversation with a friend. However,
             you know that you are being watched and listened to by security cameras at all times. Would you 
@@ -665,14 +620,29 @@ export default function PrivacyModule() {
             AI tools or talking to customer service chatbots, it is important to remember that whatever
             information you give them has the potential to be seen and used by the companies that run them.
           </p>
-          <p className="text-base font-semibold text-purple-800 mb-2">
+          
+          <div className="border-t border-purple-200 pt-4 space-y-3">
+          <p className="text-base font-semibold text-purple-900">
             What can AI companies do with the information they collect from prompts?
           </p>
-          <p className="text-base text-purple-700 leading-relaxed">
-            AI systems may process prompts, uploaded files, account details, and behavioral
-            patterns. Understanding privacy helps people use these tools more carefully and
-            ask better questions about consent, transparency, retention, and accountability.
+          <p className="text-base text-purple-800 leading-relaxed">
+            A large language model such as ChatGPT remembers everything you tell it. In fact,
+            it uses input data to train itself and improve its performance. This means your
+            prompts can make the model better, but it also means you need to be careful what you
+            tell it. In work-related settings, you need to be careful not to expose confidential
+            customer information or private company data. When using AI for in personal settings,
+            it is important not to share any information about yourself that you would not feel
+            comfortable sharing with a stranger on the street.
           </p>
+          </div>
+        </div>
+
+        {/* Step 3 header */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            3
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Reflect</h2>
         </div>
 
         {/* Reflection */}
@@ -737,8 +707,8 @@ export default function PrivacyModule() {
                 url: "https://hai.stanford.edu/news/privacy-ai-era-how-do-we-protect-our-personal-information",
             },
             {
-                title: "ICO — Guide to data protection",
-                url: "https://ico.org.uk/for-the-public/",
+                title: "Does AI Take Your Data? AI and Data Privacy",
+                url: "https://www.staysafeonline.org/articles/does-ai-take-your-data-ai-and-data-privacy",
             },
             ].map((item) => (
             <a
