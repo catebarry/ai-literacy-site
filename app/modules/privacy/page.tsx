@@ -91,21 +91,21 @@ const MAP_STOPS: Record<
     y: number;
   }
 > = {
-  device: { x: 20, y: 20 },
-  app: { x: 28, y: 32 },
-  model: { x: 51, y: 18 },
-  logs: { x: 65, y: 25 },
-  review: { x: 88, y: 18 },
+  device: { x: 20, y: 13 },
+  app: { x: 28, y: 12 },
+  model: { x: 51, y: 13 },
+  logs: { x: 65, y: 20 },
+  review: { x: 88, y: 15 },
 };
 
 const LABEL_OFFSETS: Record<
   DataStop["id"],
   { dx: number; dy: number }
 > = {
-  device: { dx: -10, dy: -10 },
-  app: { dx: -10, dy: -10 },
-  model: { dx: -10, dy: -10 },
-  logs: { dx: -10, dy: -10 },
+  device: { dx: -60, dy: 50 },
+  app: { dx: -10, dy: 25 },
+  model: { dx: -60, dy: 50 },
+  logs: { dx: -10, dy: 50 },
   review: { dx: -10, dy: -10 },
 };
 
