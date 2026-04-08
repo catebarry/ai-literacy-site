@@ -205,7 +205,7 @@ export default function EnvironmentModule() {
             <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
               <div
                 className="h-full bg-yellow-400 rounded-full transition-all duration-500"
-                style={{ width: `${hasAny ? Math.min((totalEnergy / 5000) * 100, 100) : 0}%` }}
+                style={{width: `${hasAny ? logBar(totalEnergy, scaled ? 5_000_000 : 5000) : 0}%`}}
               />
             </div>
           </div>
@@ -226,7 +226,7 @@ export default function EnvironmentModule() {
             <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
               <div
                 className="h-full bg-blue-400 rounded-full transition-all duration-500"
-                style={{ width: `${hasAny ? Math.min((totalWater / 20000) * 100, 100) : 0}%` }}
+                style={{width: `${hasAny ? logBar(totalWater, scaled ? 20_000_000 : 20000) : 0}%`}}
               />
             </div>
           </div>
