@@ -171,7 +171,7 @@ export default function PrivacyModule() {
 
   return (
     <main className="min-h-screen bg-gray-100">
-      <div className="max-w-5xl mx-auto px-6 py-10">
+      <div className="max-w-4xl mx-auto px-6 py-10">
         {/* Back */}
         <Link
           href="/"
