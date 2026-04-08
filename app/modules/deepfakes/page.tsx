@@ -143,135 +143,78 @@ export default function DeepfakesModule() {
           </div>
         </div>
 
-        {/* Learn More */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
-          <div className="space-y-2">
-            {[
-              "How deepfake technology works",
-              "Real-world cases where deepfakes caused harm",
-              "Teacher resources and lesson plans",
-            ].map((item) => (
-              <a
-                key={item}
-                href="/"
-                className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
-              >
-                {"→ " + item}
-              </a>
-            ))}
-          </div>
+        {/* What You Can Do */}
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-green-900 mb-4">
+            What You Can Do
+          </p>
+
+          <ul className="space-y-3 text-base text-green-800">
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Question whether the content you see online is real</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Look for visual clues that indicate the content might be fake, but don't rely on these alone</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Check who first created or shared the content</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Talk about it with others if you are unsure </span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Be transparent and get permission if you are creating or sharing AI content</span>
+            </li>
+
+          </ul>
         </div>
         
         {/* ── AIG-CSAM Subsection ── */}
- 
-        {/* Content Advisory */}
-        <div className="flex items-start gap-3 bg-amber-50 border border-amber-300 rounded-lg px-5 py-4 mb-4">
-          <ShieldAlertIcon size={20} className="text-amber-500 mt-0.5 shrink-0" />
-          <div>
-            <p className="text-sm font-semibold text-amber-800 mb-1">Content Advisory</p>
-            <p className="text-sm text-amber-700 leading-relaxed">
-              The following section discusses the serious harm of AI-generated child
-              sexual abuse material (AIG-CSAM). No graphic content is shown. If you find
-              this topic distressing, you may skip ahead to the &quot;Learn More&quot; section
-              below. Support resources are available at{" "}
-              <a
-                href="https://www.missingkids.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit the National Center for Missing and Exploited Children website"
-                className="underline hover:text-amber-900"
-              >
-                missingkids.org
-              </a>
-              .
-            </p>
-          </div>
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-amber-900 mb-2">
+            Serious harms of deepfakes
+          </p>
+          <p className="text-base text-amber-800 leading-relaxed mb-4">
+            Deepfakes are not just about misinformation. They can also be used in abusive and illegal ways,
+            including AI-generated child sexual abuse material.
+          </p>
+
+          <Link
+            href="/modules/deepfakes/csam"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-md bg-amber-900 text-white hover:bg-amber-800 transition-colors"
+          >
+            Learn more about CSAM →
+          </Link>
         </div>
- 
-        {/* AIG-CSAM Card */}
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-3">
-            A Serious Harm: AI-Generated Child Sexual Abuse Material
-          </p>
-          <p className="text-base text-gray-600 leading-relaxed mb-3">
-            One of the most harmful uses of deepfake technology is the creation of
-            AI-generated child sexual abuse material (AIG-CSAM) — synthetic explicit
-            imagery of minors that is produced entirely by AI, without involving a
-            real child in its creation. Reports of this content to the{" "}
-            <a
-              href="https://www.missingkids.org/gethelpnow/cybertipline/cybertiplinedata"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View NCMEC CyberTipline data"
-              className="text-blue-600 hover:underline"
-            >
-              NCMEC CyberTipline
-            </a>{" "}
-            increased by over 1,300% between 2023 and 2024, rising from roughly 4,700
-            to 67,000 reports.
-          </p>
-          <p className="text-base text-gray-600 leading-relaxed mb-3">
-            Even though no real child appears in synthetic CSAM, researchers and
-            lawmakers agree it causes real harm — normalizing the exploitation of
-            children and creating gaps in existing law that make prosecution harder.
-          </p>
-          <p className="text-base text-gray-600 leading-relaxed">
-            Legislation like the{" "}
-            <a
-              href="https://www.congress.gov/bill/119th-congress/house-bill/4831/text"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Read the ENFORCE Act bill text on congress.gov"
-              className="text-blue-600 hover:underline"
-            >
-              ENFORCE Act
-            </a>{" "}
-            aims to close these legal gaps by ensuring AIG-CSAM is prosecuted with
-            the same consequences as traditional CSAM offenses. The{" "}
-            <a
-              href="https://www.whitehouse.gov/briefings-statements/2025/05/first-lady-melania-trump-joins-president-trump-for-signing-of-the-take-it-down-act/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Read about the TAKE IT DOWN Act signing"
-              className="text-blue-600 hover:underline"
-            >
-              TAKE IT DOWN Act
-            </a>
-            , signed in May 2025, also addressed the psychological harm of
-            non-consensual deepfake imagery targeting minors.
-          </p>
-        </div>
- 
+
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
           <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
           <div className="space-y-2">
             {[
               {
-                label: "How deepfake technology works",
-                href: "https://www.ibm.com/think/topics/open-source-ai",
+                label: "AI for Education — Uncovering Deepfakes",
+                href: "https://www.aiforeducation.io/ai-resources/uncovering-deepfakes",
                 ariaLabel: "Learn how deepfake and open-source AI technology works",
               },
               {
-                label: "Real-world cases where deepfakes caused harm",
-                href: "https://pulitzercenter.org/resource/how-we-investigated-epidemic-ai-generated-child-sexual-abuse-material-internet",
-                ariaLabel: "Read the Pulitzer Center investigation into AIG-CSAM",
+                label: "UVA — What the heck is a deepfake",
+                href: "https://security.virginia.edu/deepfakes",
+                ariaLabel: "Learn how deepfake and open-source AI technology works",
               },
               {
-                label: "How the ENFORCE Act addresses AIG-CSAM",
-                href: "https://www.thorn.org/blog/the-enforce-act-addressing-ai-generated-csam-offenses/",
-                ariaLabel: "Read Thorn's explainer on the ENFORCE Act",
-              },
-              {
-                label: "NCMEC CyberTipline reporting data",
-                href: "https://www.missingkids.org/gethelpnow/cybertipline/cybertiplinedata",
-                ariaLabel: "View NCMEC CyberTipline statistics",
-              },
-              {
-                label: "FTC inquiry into AI chatbots and child safety",
-                href: "https://www.ftc.gov/news-events/news/press-releases/2025/09/ftc-launches-inquiry-ai-chatbots-acting-companions",
-                ariaLabel: "Read the FTC press release on AI chatbot safety inquiry",
+                label: "MIT — DetectDeepFakes: counteract misinformation created by AI",
+                href: "https://www.media.mit.edu/projects/detect-fakes/overview/",
+                ariaLabel: "Learn how deepfake and open-source AI technology works",
               },
             ].map((item) => (
               <a
@@ -287,7 +230,6 @@ export default function DeepfakesModule() {
             ))}
           </div>
         </div>
-
 
         {/* Footer Nav */}
         <div className="border-t border-gray-300 pt-6 flex items-center justify-between">

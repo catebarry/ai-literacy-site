@@ -647,7 +647,7 @@ export default function PrivacyModule() {
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-lg font-semibold text-gray-900 mb-2">Reflect</p>
+          <p className="text-lg font-semibold text-gray-900 mb-2">Questions to Consider</p>
           <div className="space-y-3">
             {[
               "Did seeing the possible route of a prompt change how you think about using AI tools?",
