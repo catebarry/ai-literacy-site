@@ -83,16 +83,12 @@ const TASKS: Task[] = [
 ];
 
 // Annual electricity consumption in TWh — sorted ascending
-// Country sources: Ember 2024, IEA, REN (Portugal)
-// "All Gen AI" figure: Schneider Electric Sustainability Research Institute (2025),
-// as reported by IEEE Spectrum. OpenAI does not publicly disclose ChatGPT's energy use;
-// IEEE Spectrum estimates ChatGPT alone at ~0.31 TWh using Altman's per-query figure.
 const COUNTRIES = [
-    { name: "Kenya", twh: 11.7, flag: "🇰🇪", isAI: false },
+    { name: "Lithuania", twh: 8.80, flag: "🇱🇹", isAI: false },
+    { name: "Kenya", twh: 12.85, flag: "🇰🇪", isAI: false },
     { name: "All Gen AI*", twh: 15, flag: "🤖", isAI: true },
-    { name: "Iceland", twh: 20, flag: "🇮🇸", isAI: false },
-    { name: "Ireland", twh: 34, flag: "🇮🇪", isAI: false },
-    { name: "Portugal", twh: 51.4, flag: "🇵🇹", isAI: false },
+    { name: "Iceland", twh: 20.12, flag: "🇮🇸", isAI: false },
+    { name: "Ireland", twh: 30.99, flag: "🇮🇪", isAI: false },
   ];
 
 export default function EnvironmentModule() {
@@ -369,7 +365,7 @@ export default function EnvironmentModule() {
         {/* Country Comparison */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-lg font-semibold text-gray-900 mb-1">
-            How does the energy use of all generative AI compare to entire countries?
+            How does the electricity use for all generative AI compare to entire countries?
           </p>
           <p className="text-sm text-gray-400 mb-5">
             {"Annual electricity consumption (TWh/year)"}
@@ -404,7 +400,24 @@ export default function EnvironmentModule() {
             ))}
           </div>
           <p className="text-xs text-gray-400 mt-4 leading-relaxed">
-            Country data: Ember 2024, IEA, REN Portugal. *"All Gen AI" = all generative AI queries globally, estimated at 15 TWh for 2025 by Schneider Electric Sustainability Research Institute, as reported by IEEE Spectrum. ChatGPT alone is estimated at ~0.31 TWh (IEEE Spectrum, using Altman's per-query figure) — OpenAI does not publicly disclose its energy consumption.
+            Country data:{" "}
+            <a
+              href="https://ourworldindata.org/energy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Our World in Data (2025)
+            </a>
+            . *All Gen AI = all generative AI queries globally, estimated at 15 TWh for 2025 by{" "}
+            <a
+              href="https://spectrum.ieee.org/ai-energy-use#:~:text=OpenAI%20doesn't%20provide%20much%20information%20about%20its,is%20equal%20to%20powering%2029%2C000%20US%20homes"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Schneider Electric Sustainability Research Institute
+            </a>.
           </p>
         </div>
 
@@ -517,12 +530,16 @@ export default function EnvironmentModule() {
           <div className="space-y-2">
             {[
               {
-                label: "Epoch AI — How much energy does ChatGPT use? (2025)",
+                label: "Epoch AI — How much energy does ChatGPT use?",
                 href: "https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use",
               },
               {
-                label: "MIT Technology Review — We did the math on AI's energy footprint (2025)",
+                label: "MIT Technology Review — We did the math on AI's energy footprint",
                 href: "https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/",
+              },
+              {
+                label: "IEEE — The Hidden Behemoth Behind Every AI Answer",
+                href: "https://spectrum.ieee.org/ai-energy-use#:~:text=OpenAI%20doesn't%20provide%20much%20information%20about%20its,is%20equal%20to%20powering%2029%2C000%20US%20homes",
               },
               {
                 label: "Li et al. — Making AI Less Thirsty: water footprint of AI models (2023)",
