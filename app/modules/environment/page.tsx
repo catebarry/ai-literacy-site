@@ -2,63 +2,103 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, BookOpen, CheckCircle, Zap, Droplets } from "lucide-react";
+import { ArrowLeft, BookOpen, CheckCircle, Zap, Droplets, Info } from "lucide-react";
 
 type Task = {
   name: string;
   emoji: string;
   energy: number; // Wh
+  energyNote: string;
   water: number;  // mL
+  waterNote: string;
   source: string;
 };
+
+// ─── NOTES ON ESTIMATES ────────────────────────────────────────────────────
+//
+// ENERGY: Values are based on inference (query-time) compute only.
+//   • "Ask a question": ~0.3 Wh for a typical GPT-4o query (~500 output tokens).
+//     Source: Epoch AI (2025). The 2025 arxiv paper "How Hungry is AI?" (Jegham et al.)
+//     finds ~0.43 Wh for a short GPT-4o query. Reasoning models (o1, o3) can exceed
+//     33 Wh per long prompt — over 70× more than the simple figure shown here.
+//   • "Write an essay": ~2 Wh reflects a query with ~10,000 input tokens (~200 pages).
+//     Epoch AI estimates ~2.5 Wh for that scale; 2 Wh is a reasonable lower bound.
+//   • "Generate an image": 1–11 Wh depending on model size and resolution.
+//     Hugging Face/CMU (Luccioni et al., 2023) found Stable Diffusion XL uses
+//     ~10 Wh per image; more efficient models use ~1–2 Wh.
+//   • "Generate a short video": Rough estimate; video generation benchmarks are sparse.
+//     Treat as an order-of-magnitude figure.
+//
+// WATER: This is where uncertainty is widest.
+//   • Company-disclosed figures (e.g., Google's 0.26 mL per Gemini query) count
+//     only on-site cooling water — they exclude the water used in power generation.
+//   • Academic research (Li et al. 2023, "Making AI Less Thirsty") includes both
+//     on-site and power-plant cooling and estimates 10–25 mL per query for older
+//     GPT-3-era infrastructure. Independent analyses of modern models suggest ~5 mL
+//     (NIAIS report). The values below use ~10 mL for a simple query as a
+//     research-consensus middle estimate; real figures vary by region (water-intensive
+//     fossil fuel grids vs. hydro), data center cooling technology, and model size.
+//   • Water usage is poorly disclosed. Very few AI companies report full lifecycle
+//     water footprints, making independent verification difficult.
+//
+// ───────────────────────────────────────────────────────────────────────────
 
 const TASKS: Task[] = [
   {
     name: "Ask a question",
     emoji: "💬",
     energy: 0.3,
-    water: 0.3,
-    source: "Epoch AI, 2025",
+    energyNote: "Range: 0.3–0.5 Wh for standard models; up to 33+ Wh for reasoning models",
+    water: 10,
+    waterNote: "Range: 0.3 mL (company on-site only) to 25 mL (incl. power-plant water)",
+    source: "Epoch AI 2025 (energy); Li et al. 2023 / NIAIS (water)",
   },
   {
     name: "Write an essay",
     emoji: "📝",
     energy: 2,
-    water: 2,
-    source: "Est. based on token length research",
+    energyNote: "Reflects ~10k input tokens + long output; Epoch AI estimates ~2.5 Wh at this scale",
+    water: 50,
+    waterNote: "Scaled proportionally from simple-query estimate; varies significantly by region",
+    source: "Epoch AI 2025 (energy); scaled from Li et al. 2023 (water)",
   },
   {
     name: "Generate an image",
     emoji: "🖼️",
     energy: 10,
-    water: 5,
-    source: "Hugging Face / CMU, 2023",
+    energyNote: "High end of observed range (1–11 Wh); reflects a high-quality/large model",
+    water: 100,
+    waterNote: "Scaled from energy; high compute = high cooling demand",
+    source: "Luccioni et al. 2023, Hugging Face / CMU (energy); proportional estimate (water)",
   },
   {
     name: "Generate a short video",
     emoji: "🎥",
     energy: 50,
-    water: 20,
-    source: "Toolpod, 2026 (conservative estimate)",
+    energyNote: "Rough order-of-magnitude estimate; dedicated video-generation benchmarks are limited",
+    water: 500,
+    waterNote: "Proportional estimate; real figures will vary widely",
+    source: "Conservative estimate based on frame/token scaling (energy & water)",
   },
 ];
 
 // Annual electricity consumption in TWh — sorted ascending
-// Sources: Ember 2024, IEA, REN (Portugal), BestBrokers/Digital Journal (ChatGPT)
+// Country sources: Ember 2024, IEA, REN (Portugal)
+// "All Gen AI" figure: Schneider Electric Sustainability Research Institute (2025),
+// as reported by IEEE Spectrum. OpenAI does not publicly disclose ChatGPT's energy use;
+// IEEE Spectrum estimates ChatGPT alone at ~0.31 TWh using Altman's per-query figure.
 const COUNTRIES = [
     { name: "Kenya", twh: 11.7, flag: "🇰🇪", isAI: false },
+    { name: "All Gen AI*", twh: 15, flag: "🤖", isAI: true },
     { name: "Iceland", twh: 20, flag: "🇮🇸", isAI: false },
-    { name: "ChatGPT", twh: 22.15, flag: "🤖", isAI: true },
     { name: "Ireland", twh: 34, flag: "🇮🇪", isAI: false },
     { name: "Portugal", twh: 51.4, flag: "🇵🇹", isAI: false },
-//    { name: "UK", twh: 310, flag: "🇬🇧", isAI: false },
-//    { name: "Germany", twh: 485, flag: "🇩🇪", isAI: false },
-//    { name: "USA", twh: 4000, flag: "🇺🇸", isAI: false },
   ];
 
 export default function EnvironmentModule() {
   const [counts, setCounts] = useState<Record<string, number>>({});
   const [scaled, setScaled] = useState(false);
+  const [expandedTask, setExpandedTask] = useState<string | null>(null);
 
   const add = (name: string) =>
     setCounts((p) => ({ ...p, [name]: (p[name] || 0) + 1 }));
@@ -127,52 +167,85 @@ export default function EnvironmentModule() {
             add up — then hit the scale button to see what happens when a million
             people do the same thing.
           </p>
-          <p className="text-base text-gray-600 leading-relaxed mb-3">
-            As you play, pay attention to details like lighting, skin texture, hair,
-            backgrounds, and anything that looks slightly unusual or inconsistent.
-          </p>
           <p className="text-base text-gray-400">
-            Numbers are estimates based on published research — ranges vary by model and hardware.
+            Numbers are estimates — tap the info icon on each task to see the range and source.
           </p>
         </div>
 
+        {/* Nuance disclaimer */}
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-5 mb-4">
+          <div className="flex items-start gap-3">
+            <Info size={18} className="text-amber-600 mt-0.5 shrink-0" />
+            <div>
+              <p className="text-sm font-semibold text-amber-900 mb-1">Why these are estimates, not exact figures</p>
+              <p className="text-sm text-amber-800 leading-relaxed">
+                Energy and water costs vary significantly based on <strong>model size</strong> (a small model may use 70× less energy than a large reasoning model), <strong>query length</strong> (long inputs cost much more), <strong>data center region</strong> (cooling water needs differ by climate), and <strong>what's counted</strong> (companies typically report on-site cooling only; researchers include power-plant water, which can be 10–30× higher). Values shown here are middle estimates from peer-reviewed sources — tap any task&apos;s <Info size={11} className="inline" /> icon for the full range and source.
+              </p>
+            </div>
+          </div>
+        </div>
 
         {/* Task Builder */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-lg font-semibold text-gray-900 mb-4">Build Your AI Session</p>
           <div className="space-y-3">
             {TASKS.map((task) => (
-              <div
-                key={task.name}
-                className="flex items-center justify-between border border-gray-200 rounded-lg px-4 py-3"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-xl">{task.emoji}</span>
-                  <div>
-                    <p className="text-base font-medium text-gray-900">{task.name}</p>
-                    <p className="text-sm text-gray-500">
-                      ~{task.energy} Wh &nbsp;·&nbsp; ~{task.water} mL water
-                    </p>
-                    <p className="text-xs text-gray-400 italic">Source: {task.source}</p>
+              <div key={task.name} className="border border-gray-200 rounded-lg overflow-hidden">
+                <div className="flex items-center justify-between px-4 py-3">
+                  <div className="flex items-center gap-3 flex-1 min-w-0">
+                    <span className="text-xl shrink-0">{task.emoji}</span>
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <p className="text-base font-medium text-gray-900">{task.name}</p>
+                        <button
+                          onClick={() => setExpandedTask(expandedTask === task.name ? null : task.name)}
+                          className="text-gray-400 hover:text-gray-600 transition-colors"
+                          aria-label="Show details"
+                        >
+                          <Info size={14} />
+                        </button>
+                      </div>
+                      <p className="text-sm text-gray-500">
+                        ~{task.energy} Wh &nbsp;·&nbsp; ~{task.water} mL water
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 shrink-0">
+                    <button
+                      onClick={() => remove(task.name)}
+                      className="w-8 h-8 flex items-center justify-center border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 text-lg font-medium"
+                    >
+                      −
+                    </button>
+                    <span className="w-5 text-center text-base font-semibold text-gray-900">
+                      {counts[task.name] || 0}
+                    </span>
+                    <button
+                      onClick={() => add(task.name)}
+                      className="w-8 h-8 flex items-center justify-center bg-gray-900 text-white rounded-md hover:bg-gray-700 text-lg font-medium"
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={() => remove(task.name)}
-                    className="w-8 h-8 flex items-center justify-center border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 text-lg font-medium"
-                  >
-                    −
-                  </button>
-                  <span className="w-5 text-center text-base font-semibold text-gray-900">
-                    {counts[task.name] || 0}
-                  </span>
-                  <button
-                    onClick={() => add(task.name)}
-                    className="w-8 h-8 flex items-center justify-center bg-gray-900 text-white rounded-md hover:bg-gray-700 text-lg font-medium"
-                  >
-                    +
-                  </button>
-                </div>
+
+                {/* Expanded detail panel */}
+                {expandedTask === task.name && (
+                  <div className="border-t border-gray-100 bg-gray-50 px-4 py-3 space-y-2">
+                    <div>
+                      <span className="text-xs font-semibold text-yellow-700">⚡ Energy range: </span>
+                      <span className="text-xs text-gray-600">{task.energyNote}</span>
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold text-blue-700">💧 Water range: </span>
+                      <span className="text-xs text-gray-600">{task.waterNote}</span>
+                    </div>
+                    <div>
+                      <span className="text-xs font-semibold text-gray-500">Source: </span>
+                      <span className="text-xs text-gray-400 italic">{task.source}</span>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -226,7 +299,7 @@ export default function EnvironmentModule() {
             <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
               <div
                 className="h-full bg-blue-400 rounded-full transition-all duration-500"
-                style={{width: `${hasAny ? logBar(totalWater, scaled ? 20_000_000 : 20000) : 0}%`}}
+                style={{width: `${hasAny ? logBar(totalWater, scaled ? 500_000_000 : 500_000) : 0}%`}}
               />
             </div>
           </div>
@@ -296,7 +369,7 @@ export default function EnvironmentModule() {
         {/* Country Comparison */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-lg font-semibold text-gray-900 mb-1">
-            How does ChatGPT compare to entire countries?
+            How does the energy use of all generative AI compare to entire countries?
           </p>
           <p className="text-sm text-gray-400 mb-5">
             {"Annual electricity consumption (TWh/year)"}
@@ -317,7 +390,8 @@ export default function EnvironmentModule() {
                     className={`h-full rounded-full transition-all duration-700 ${
                       c.isAI ? "bg-orange-400" : "bg-gray-300"
                     }`}
-                    style={{ width: `${(c.twh / maxTwh) * 100}%` }}                  />
+                    style={{ width: `${(c.twh / maxTwh) * 100}%` }}
+                  />
                 </div>
                 <span
                   className={`text-sm w-20 text-right shrink-0 font-semibold ${
@@ -329,8 +403,8 @@ export default function EnvironmentModule() {
               </div>
             ))}
           </div>
-          <p className="text-sm text-gray-400 mt-4">
-            {"Sources: Ember 2024, IEA, REN Portugal, BestBrokers 2025."}
+          <p className="text-xs text-gray-400 mt-4 leading-relaxed">
+            Country data: Ember 2024, IEA, REN Portugal. *"All Gen AI" = all generative AI queries globally, estimated at 15 TWh for 2025 by Schneider Electric Sustainability Research Institute, as reported by IEEE Spectrum. ChatGPT alone is estimated at ~0.31 TWh (IEEE Spectrum, using Altman's per-query figure) — OpenAI does not publicly disclose its energy consumption.
           </p>
         </div>
 
@@ -342,20 +416,34 @@ export default function EnvironmentModule() {
           <h2 className="text-xl font-semibold text-gray-900">Understand</h2>
         </div>
 
-
         {/* Explanation */}
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
-          <p className="text-base font-semibold text-purple-900">
-            Why does AI use water?
-          </p>
-          <p className="text-base text-purple-800 leading-relaxed">
-            Data centers generate enormous heat. To prevent servers from overheating,
-            cooling systems evaporate water — often millions of gallons per day per facility.
-            This water is largely consumed, not recycled.
-          </p>
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-4">
+          <div>
+            <p className="text-base font-semibold text-purple-900 mb-2">
+              Why does AI use water?
+            </p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              AI runs in big buildings called data centers. Inside are powerful computers 
+              that get very hot. To cool them down, these centers use water—sometimes millions of gallons a day. 
+              Some water is also used to make the electricity that powers the computers.
+            </p>
+          </div>
+
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-3">
-              Why does this matter?
+            <p className="text-base font-semibold text-purple-900 mb-2">
+              Why is water so hard to measure?
+            </p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              Companies often count only the water used at the data center. 
+              But a lot more water is used to produce the electricity they need. 
+              When you include that, total water use can be much higher. 
+              It also depends on location—hot places need more cooling water than cold ones.
+            </p>
+          </div>
+
+          <div className="border-t border-purple-200 pt-4">
+            <p className="text-base font-semibold text-purple-900 mb-2">
+              Why does this matter at scale?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
               Individual queries are small, but at scale — billions of daily queries — the
@@ -381,6 +469,7 @@ export default function EnvironmentModule() {
               "Did the scale button change how you think about your AI use?",
               "Which task had the biggest environmental impact — and why?",
               "Should AI companies be required to show energy costs before you submit a prompt?",
+              "If company-reported water figures are much lower than academic estimates, who should you trust — and why might companies report differently?",
             ].map((q) => (
               <div
                 key={q}
@@ -392,21 +481,70 @@ export default function EnvironmentModule() {
           </div>
         </div>
 
+        {/* What You Can Do */}
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-green-900 mb-4">
+            What You Can Do
+          </p>
+
+          <ul className="space-y-3 text-base text-green-800">
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Use AI intentionally instead of automatically</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Avoid repetitive or unnecessary AI tasks</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Keep requests simple when possible</span>
+            </li>
+
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Remember that small actions add up at scale</span>
+            </li>
+
+          </ul>
+        </div>
+
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
           <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
           <div className="space-y-2">
             {[
-              "Epoch AI — How much energy does ChatGPT use? (2025)",
-              "MIT Technology Review — We did the math on AI's energy footprint (2025)",
-              "Google Cloud — Measuring the environmental impact of AI inference (2025)",
+              {
+                label: "Epoch AI — How much energy does ChatGPT use? (2025)",
+                href: "https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use",
+              },
+              {
+                label: "MIT Technology Review — We did the math on AI's energy footprint (2025)",
+                href: "https://www.technologyreview.com/2025/05/20/1116327/ai-energy-usage-climate-footprint-big-tech/",
+              },
+              {
+                label: "Li et al. — Making AI Less Thirsty: water footprint of AI models (2023)",
+                href: "https://arxiv.org/abs/2304.03271",
+              },
+              {
+                label: "Luccioni et al. — Power Hungry Processing: carbon cost of AI tasks (2023)",
+                href: "https://arxiv.org/abs/2311.16863",
+              },
+              {
+                label: "Jegham et al. — How Hungry is AI? Energy, water & carbon of LLM inference (2025)",
+                href: "https://arxiv.org/html/2505.09598v1",
+              },
             ].map((item) => (
               <a
-                key={item}
-                href="#"
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
               >
-                {"→ " + item}
+                {"→ " + item.label}
               </a>
             ))}
           </div>
