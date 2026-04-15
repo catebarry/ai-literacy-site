@@ -42,6 +42,22 @@ const modules = [
     href: "/modules/privacy",
     icon: Shield,
   },
+  {
+    title: "Companion vs. Assistive AI",
+    subtitle: "Where do you draw the line?",
+    description: "Explore how AI tools differ in intent and why that distinction matters for regulation.",
+    time: "15-20 min",
+    href: "/modules/companion-assistive",
+    icon: Zap,
+  },
+  {
+    title: "Agentic AI",
+    subtitle: "When AI takes actions in the world",
+    description: "Learn how agentic AI can act autonomously on your behalf and what that means for trust and control.",
+    time: "15-20 min",
+    href: "/modules/agentic-ai",
+    icon: Eye,
+  },
 ];
 
 export default function ModulesPage() {

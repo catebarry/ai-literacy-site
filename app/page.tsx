@@ -51,7 +51,19 @@ const modules = [
     description: "The hidden energy and water behind AI",
     href: "/modules/environment",
     icon: Zap,
-  }
+  },
+  {
+    title: "Companion vs. Assistive AI",
+    description: "Where do you draw the line?",
+    href: "/modules/companion-assistive",
+    icon: Eye,
+  },
+  {
+    title: "Agentic AI",
+    description: "When AI takes actions in the world",
+    href: "/modules/agentic-ai",
+    icon: Zap,
+  },
 ];
 
 const steps = [
