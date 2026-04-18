@@ -54,7 +54,6 @@ export default function AboutPage() {
                   "Self-guided modules that work for individual or group learning",
                   "Built-in reflection questions for class discussion",
                   "Clear learning objectives aligned with digital literacy standards",
-                  "Downloadable resources and lesson plans (coming soon)",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-4 text-base text-gray-600">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />

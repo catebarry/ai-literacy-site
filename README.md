@@ -1,5 +1,5 @@
 # AI Literacy Lab
-An interactive educational website designed to help students and teachers understand how AI systems work—and where they can go wrong.
+An interactive educational website designed to help students and teachers understand how AI systems work and where they can go wrong.
 
 The goal of this project is to move beyond passive explanations and instead provide hands-on, experiential learning through activities that demonstrate real AI behaviors like hallucinations, sycophancy, bias, and more.
 
@@ -7,8 +7,8 @@ The goal of this project is to move beyond passive explanations and instead prov
 The website contains a structured as a set of interactive modules, each focused on a specific concept or risk in AI.
 
 Each module includes:
-- A short explanation of the concept
 - A guided interactive activity
+- A short explanation of the concept
 - Reflection prompts to reinforce learning
 
 Tech Stack
@@ -35,17 +35,13 @@ Then open: http://localhost:3000
 ### 4. Development
 Modify `page.tsx` files to edit the webpages. The folder path represents the url link. The page auto-updates as you edit the files.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
+## Deploy on Vercel (TO DO!!!)
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Check out [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## AI Assistance Statement
+Portions of this project were developed with the assistance of AI tools, including OpenAI’s ChatGPT, Anthropic’s Claude, and GitHub Copilot. These tools supported implementation work in TypeScript and were also used to help refine ideas, structure content, and troubleshoot issues during development.
+
+All outputs were critically reviewed, tested, and revised by the authors, and all final design decisions, research, and implementations reflect our own work.
