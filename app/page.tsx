@@ -15,6 +15,7 @@ import {
   Info,
   Bot,
   ClipboardList,
+  Terminal,
 } from "lucide-react";
 
 const riskModules = [
@@ -68,6 +69,12 @@ const knowledgeModules = [
     description: "When AI takes actions in the world",
     href: "/modules/agentic-ai",
     icon: ClipboardList,
+  },
+  {
+    title: "Mastering LLMs",
+    description: "Prompts, systems, and personalization",
+    href: "/modules/mastering-llms",
+    icon: Terminal,
   },
 ];
 
