@@ -405,15 +405,15 @@ export default function AgenticAIPage() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span></span>
+              <span>Before using an AI tool, ask yourself: can this AI do more than generate content? Can it take action on my device?</span>
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span></span>
+              <span>Check whether an agentic tool has a confirmation step before acting, and turn it on if it does. Insist on reviewing any action an AI proposes before it is carried out</span>
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span></span>
+              <span>Remember that you are responsible for what an AI does in your name. If an agent makes a mistake, the consequences are unlikely to fall on the company that built it.</span>
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
