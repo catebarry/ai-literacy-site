@@ -457,6 +457,24 @@ export default function HallucinationsModule() {
 
         </div>
 
+        {/* Step 3 */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            3
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Reflect</h2>
+        </div>
+
+        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-gray-900 mb-4">Reflect on What You Saw</p>
+          <div className="space-y-3">
+            <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">Which hallucination type was hardest for you to identify? What made it difficult?</div>
+            <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">If you were writing an essay and an AI gave you a citation that looked real, what steps would you take before including it?</div>
+            <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">Why do you think AI hallucinations tend to sound more confident than accurate responses?</div>
+            <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">Think of a time you used AI for schoolwork. Looking back, is there anything it told you that you accepted without verifying? How would you check it now?</div>
+          </div>
+        </div>
+
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
           <p className="text-base font-semibold text-green-900 mb-4">What You Can Do</p>
@@ -482,24 +500,6 @@ export default function HallucinationsModule() {
               <span>If you use one AI model to double-check another, remember that different models often share similar training data and blind spots. Cross-checking with library databases and verifiable sources is more reliable.</span>
             </li>
           </ul>
-        </div>
-
-        {/* Step 3 */}
-        <div className="flex items-center gap-3 mb-5 mt-8">
-          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
-            3
-          </div>
-          <h2 className="text-xl font-semibold text-gray-900">Reflect</h2>
-        </div>
-
-        <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">Reflect on What You Saw</p>
-          <div className="space-y-3">
-            <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">Which hallucination type was hardest for you to identify? What made it difficult?</div>
-            <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">If you were writing an essay and an AI gave you a citation that looked real, what steps would you take before including it?</div>
-            <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">Why do you think AI hallucinations tend to sound more confident than accurate responses?</div>
-            <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">Think of a time you used AI for schoolwork. Looking back, is there anything it told you that you accepted without verifying? How would you check it now?</div>
-          </div>
         </div>
 
         {/* Sources / Learn More */}
