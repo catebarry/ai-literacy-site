@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AlertCircle, Users, Image, Brain, Shield, Eye, Zap, ChevronRight } from "lucide-react";
+import { AlertCircle, Users, Image, Brain, Shield, Eye, Zap, ChevronRight, Bot } from "lucide-react";
 
 const modules = [
   {
@@ -56,7 +56,7 @@ const modules = [
     description: "Learn how agentic AI can act autonomously on your behalf and what that means for trust and control.",
     time: "15-20 min",
     href: "/modules/agentic-ai",
-    icon: Eye,
+    icon: Bot,
   },
 ];
 

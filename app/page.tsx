@@ -13,6 +13,8 @@ import {
   Home as HomeIcon,
   BookOpen,
   Info,
+  Bot,
+  ClipboardList,
 } from "lucide-react";
 
 const modules = [
@@ -56,13 +58,13 @@ const modules = [
     title: "Companion vs. Assistive AI",
     description: "Where do you draw the line?",
     href: "/modules/companion-assistive",
-    icon: Eye,
+    icon: Bot,
   },
   {
     title: "Agentic AI",
     description: "When AI takes actions in the world",
     href: "/modules/agentic-ai",
-    icon: Zap,
+    icon: ClipboardList,
   },
 ];
 
