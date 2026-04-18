@@ -17,7 +17,7 @@ import {
   ClipboardList,
 } from "lucide-react";
 
-const modules = [
+const riskModules = [
   {
     title: "Hallucinations",
     description: "When AI is confident but wrong",
@@ -54,6 +54,9 @@ const modules = [
     href: "/modules/environment",
     icon: Zap,
   },
+];
+
+const knowledgeModules = [
   {
     title: "Companion vs. Assistive AI",
     description: "Where do you draw the line?",
@@ -108,12 +111,12 @@ export default function Home() {
 
       {/* Modules Grid */}
       <section className="max-w-6xl mx-auto px-6 pb-10">
+        {/* Risks*/}
         <h2 className="text-xl font-semibold text-gray-900 mb-4">
-          Learning Modules
+            Risks
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {modules.map((module, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {riskModules.map((module, index) => {
             const Icon = module.icon;
             return (
               <Link key={index} href={module.href}>
@@ -123,6 +126,27 @@ export default function Home() {
                     strokeWidth={2}
                     className="text-gray-700 mb-4"
                   />
+                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                    {module.title}
+                  </h3>
+                  <p className="text-gray-500 text-base">{module.description}</p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Foundational Knowledge */}
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">
+          Foundational Knowledge
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {knowledgeModules.map((module, index) => {
+            const Icon = module.icon;
+            return (
+              <Link key={index} href={module.href}>
+                <div className="bg-white p-6 rounded-lg border border-gray-200 hover:border-gray-400 hover:shadow-sm transition-all cursor-pointer h-full">
+                  <Icon size={30} strokeWidth={2} className="text-gray-700 mb-4" />
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">
                     {module.title}
                   </h3>
