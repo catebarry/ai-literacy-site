@@ -102,7 +102,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-100">
-
+      
 
       {/* Hero Section */}
       <section className="text-center pt-16 pb-12 px-6">
@@ -116,8 +116,31 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Modules Grid */}
+
+      {/* How It Works */}
       <section className="max-w-6xl mx-auto px-6 pb-10">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
+          <h2 className="text-xl font-semibold text-gray-900 mb-8">
+            How It Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {steps.map((step) => (
+              <div key={step.number} className="flex flex-col items-start">
+                <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 mb-4">
+                  {step.number}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                  {step.title}
+                </h3>
+                <p className="text-base text-gray-500">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Modules Grid */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
         {/* Risks*/}
         <h2 className="text-xl font-semibold text-gray-900 mb-4">
             Risks
@@ -162,28 +185,6 @@ export default function Home() {
               </Link>
             );
           })}
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="max-w-6xl mx-auto px-6 pb-16">
-        <div className="bg-gray-50 border border-gray-200 rounded-lg p-8">
-          <h2 className="text-xl font-semibold text-gray-900 mb-8">
-            How It Works
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {steps.map((step) => (
-              <div key={step.number} className="flex flex-col items-start">
-                <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 mb-4">
-                  {step.number}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                  {step.title}
-                </h3>
-                <p className="text-base text-gray-500">{step.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </main>
