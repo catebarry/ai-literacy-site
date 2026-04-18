@@ -183,26 +183,26 @@ export default function BiasModule() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
+          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
 
           <div className="space-y-5">
             <div>
               <div className="space-y-2">
                 <a href="https://www.chapman.edu/ai/bias-in-ai.aspx" target="_blank" rel="noopener noreferrer"
                   className="flex items-start gap-1.5 text-base text-blue-600 hover:underline">
-                  → Chapman University — Bias in AI: What it is and Why it Matters
+                  Chapman University — Bias in AI: What it is and Why it Matters
                 </a>
                 <a href="https://www.ajl.org/about" target="_blank" rel="noopener noreferrer"
                   className="flex items-start gap-1.5 text-base text-blue-600 hover:underline">
-                  → Algorithmic Justice League — What is algorithmic bias and why does it matter?
+                  Algorithmic Justice League — What is algorithmic bias and why does it matter?
                 </a>
                 <a href="https://www.codedbias.com/about" target="_blank" rel="noopener noreferrer"
                   className="flex items-start gap-1.5 text-base text-blue-600 hover:underline">
-                  → Coded Bias — documentary about facial recognition and racial bias in AI systems
+                  Coded Bias — documentary about facial recognition and racial bias in AI systems
                 </a>
                 <a href="https://github.com/bd1ng/latent-gaze" target="_blank" rel="noopener noreferrer"
                   className="flex items-start gap-1.5 text-base text-blue-600 hover:underline">
-                  → Latent Gaze GitHub — explore the code and read more about the project
+                  Latent Gaze GitHub — explore the code and read more about the project
                 </a>
               </div>
             </div>

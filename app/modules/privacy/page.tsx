@@ -647,7 +647,7 @@ export default function PrivacyModule() {
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-lg font-semibold text-gray-900 mb-2">Questions to Consider</p>
+          <p className="text-base font-semibold text-gray-900 mb-2">Questions to Consider</p>
           <div className="space-y-3">
             {[
               "Did seeing the possible route of a prompt change how you think about using AI tools?",
@@ -695,7 +695,7 @@ export default function PrivacyModule() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More</p>
+          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
           <div className="space-y-2">
             {[
             {
@@ -718,7 +718,7 @@ export default function PrivacyModule() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
             >
-                {"→ " + item.title}
+                {item.title}
             </a>
             ))}
           </div>

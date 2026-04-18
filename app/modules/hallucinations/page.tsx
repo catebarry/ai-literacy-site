@@ -504,7 +504,7 @@ export default function HallucinationsModule() {
 
         {/* Sources / Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Sources / Learn More</p>
+          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
           <div className="space-y-2">
             <a href="https://suprmind.ai/hub/insights/ai-hallucination-statistics-research-report-2026/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-base text-blue-600 hover:underline">
               AI Hallucination Statistics Research Report 2026 (Suprmind)

@@ -701,7 +701,7 @@ export default function CompanionAssistivePage() {
                 aria-label={item.ariaLabel}
                 className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
               >
-                {"-> " + item.label}
+                {item.label}
               </a>
             ))}
           </div>

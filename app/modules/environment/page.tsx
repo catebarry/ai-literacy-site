@@ -526,7 +526,7 @@ export default function EnvironmentModule() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More</p>
+          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
           <div className="space-y-2">
             {[
               {
@@ -561,7 +561,7 @@ export default function EnvironmentModule() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
               >
-                {"→ " + item.label}
+                {item.label}
               </a>
             ))}
           </div>

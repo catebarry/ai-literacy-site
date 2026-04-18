@@ -415,10 +415,6 @@ export default function AgenticAIPage() {
               <span>✓</span>
               <span>Remember that you are responsible for what an AI does in your name. If an agent makes a mistake, the consequences are unlikely to fall on the company that built it.</span>
             </li>
-            <li className="flex items-start gap-2">
-              <span>✓</span>
-              <span></span>
-            </li>
           </ul>
         </div>
 
