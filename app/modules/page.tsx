@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AlertCircle, Users, Image, Brain, Shield, Eye, Zap, ChevronRight, Bot } from "lucide-react";
+import { AlertCircle, Users, Image, Brain, Shield, Eye, Zap, ChevronRight, Bot, Terminal } from "lucide-react";
 
 const modules = [
   {
@@ -57,6 +57,14 @@ const modules = [
     time: "15-20 min",
     href: "/modules/agentic-ai",
     icon: Bot,
+  },
+  {
+    title: "Mastering LLMs",
+    subtitle: "Prompts, systems, and personalization",
+    description: "Learn how to optimize your prompts, use system instructions, and tailor your AI experience.",
+    time: "15-20 min",
+    href: "/modules/mastering-llms",
+    icon: Terminal,
   },
 ];
 
