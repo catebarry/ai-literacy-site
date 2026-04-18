@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AlertCircle, Users, Image, Brain, Shield, Eye, Zap, ChevronRight, Bot, Bot } from "lucide-react";
+import { AlertCircle, Users, Image, Brain, Shield, Eye, Zap, ChevronRight, Bot} from "lucide-react";
 
 const modules = [
   {
