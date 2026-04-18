@@ -29,13 +29,13 @@ const scenarios = [
       "Scheduling on your behalf is one of the most common agentic AI features. It is convenient but commits you to obligations without a final check.",
   },
   {
-    id: "enroll",
-    action: "Enroll you in a class or elective",
+    id: "purchase",
+    action: "Buy a product using your saved payment method",
     context:
-      "An AI reviews your academic record and interests, then registers you for an elective it thinks fits your goals, without asking you to confirm.",
-    stakes: "medium",
+      "You tell an AI to order more paper for your printer. It finds the cheapest option and completes the purchase using your saved credit card.",
+    stakes: "high",
     afterNote:
-      "Enrollment decisions can affect your schedule, credits, and academic path. The AI may not know about conflicts, preferences, or deadlines you care about.",
+      "Financial transactions are irreversible and involve real money. Most people are comfortable with AI recommending a product, but fewer are comfortable with it buying one.",
   },
   {
     id: "delete",
@@ -65,13 +65,13 @@ const scenarios = [
       "Reading email requires access to potentially sensitive information. Even if the AI only summarizes, it has processed everything, including private conversations.",
   },
   {
-    id: "accommodation",
-    action: "Request a disability accommodation from your school",
+    id: "medical",
+    action: "Book a doctor appointment based on your symptoms",
     context:
-      "An AI detects from your records that you may qualify for extended test time and submits a formal accommodation request to your school on your behalf.",
+      "You describe feeling unwell. An AI reviews your calendar, finds an opening, and books an appointment with your primary care doctor.",
     stakes: "high",
     afterNote:
-      "Accommodation requests involve sensitive personal data and require your consent. Submitting one without your knowledge could expose private health information and make decisions you did not authorize.",
+      "Health decisions involve sensitive personal data and judgment calls about urgency. The AI may not understand the full context of your situation.",
   },
   {
     id: "apply",
@@ -83,22 +83,22 @@ const scenarios = [
       "Job applications represent you professionally. An AI may tailor your application in ways that misrepresent your actual experience or intentions.",
   },
   {
-    id: "homework",
-    action: "Submit a completed homework assignment on your behalf",
+    id: "smart",
+    action: "Adjust your home's thermostat and lights automatically",
     context:
-      "You ask an AI to help you finish a homework assignment. It completes it and submits it directly to your school's online portal before you review it.",
+      "A smart home AI learns your preferences and starts adjusting temperature and lighting throughout the day without being asked.",
     stakes: "low",
     afterNote:
-      "Even low-stakes agentic actions carry risk. The AI may have misunderstood the prompt, introduced errors, or submitted work that does not reflect what you actually intended to turn in.",
+      "This is one of the most accepted forms of agentic AI. The stakes are low and the action is easily reversible, but it still involves the AI making decisions for you.",
   },
   {
-    id: "scholarship",
-    action: "Apply for a scholarship using your personal information",
+    id: "negotiate",
+    action: "Negotiate a bill or subscription on your behalf",
     context:
-      "An AI finds a scholarship you qualify for and submits a full application, including essays it wrote in your voice, without your final review.",
+      "An AI contacts your internet provider, negotiates a lower rate, and agrees to a new contract without you reviewing the final terms.",
     stakes: "high",
     afterNote:
-      "Scholarship applications represent you officially. An AI may misrepresent your experiences or goals, and submitting false or inaccurate information could have serious academic consequences.",
+      "Negotiating contracts involves legal commitments. The AI may accept terms you would have rejected, or give up leverage you did not know you had.",
   },
 ];
 
@@ -131,7 +131,6 @@ function ScenarioCard({
 }) {
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-5 flex flex-col gap-4">
-      {/* Stakes badge + action */}
       <div className="flex items-start justify-between gap-3">
         <p className="text-base font-semibold text-gray-900">{scenario.action}</p>
         <span
@@ -141,10 +140,9 @@ function ScenarioCard({
         </span>
       </div>
 
-      {/* Scenario description */}
       <p className="text-sm text-gray-600 leading-relaxed">{scenario.context}</p>
 
-      {/* Approve / Deny buttons - only shown before a choice is made */}
+      {/* Approve / Deny buttons, only shown before a choice is made */}
       {choice === null && (
         <div className="flex gap-2">
           <button
@@ -162,7 +160,7 @@ function ScenarioCard({
         </div>
       )}
 
-      {/* After choice: show result + explanatory note */}
+      {/* After choice: show result and explanatory note */}
       {choice !== null && (
         <div
           className={`rounded-md p-4 text-sm leading-relaxed ${
@@ -175,7 +173,6 @@ function ScenarioCard({
             {choice ? "You said: AI can do this alone" : "You said: AI should ask me first"}
           </p>
           <p>{scenario.afterNote}</p>
-          {/* Let users change their mind */}
           <button
             onClick={() => onChoice(scenario.id, !choice)}
             className="mt-2 text-xs underline opacity-60 hover:opacity-100"
@@ -216,7 +213,7 @@ export default function AgenticAIPage() {
     setShowResults(false);
   }
 
-  const results = allAnswered ? computeResults(choices as Record<string, boolean>) : null;
+  const results = allAnswered ? computeResults(choices) : null;
 
   return (
     <main className="min-h-screen bg-gray-100">
@@ -236,50 +233,14 @@ export default function AgenticAIPage() {
           Agentic AI: When AI Takes Action
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
-          Most AI tools generate content: they write, summarize, or answer questions. Agentic AI
-          goes further: it takes real actions in the world on your behalf. It can send emails,
-          make purchases, book appointments, and manage files without you doing anything. That
-          raises a serious question: how much should AI be allowed to do on its own?
+          How much should AI be allowed to do on its own? And should minors
+          have access to agentic AI tools, and under what conditions? 
         </p>
 
-        {/* Step 1: Understand */}
+        {/* Step 1 */}
         <div className="flex items-center gap-3 mb-5">
           <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
             1
-          </div>
-          <h2 className="text-xl font-semibold text-gray-900">Understand</h2>
-        </div>
-
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-8 space-y-4">
-          <div>
-            <p className="text-base font-semibold text-purple-900 mb-2">
-              What makes AI "agentic"?
-            </p>
-          </div>
-
-          <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
-              Why does autonomy level matter?
-            </p>
-          </div>
-
-          <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
-              What is a "human in the loop"?
-            </p>
-          </div>
-
-          <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
-              How is this different from regular automation?
-            </p>
-          </div>
-        </div>
-
-        {/* Step 2: Try it out */}
-        <div className="flex items-center gap-3 mb-5">
-          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
-            2
           </div>
           <h2 className="text-xl font-semibold text-gray-900">Try it out</h2>
         </div>
@@ -297,7 +258,7 @@ export default function AgenticAIPage() {
           </p>
           <p className="text-sm text-gray-400">
             {answeredCount} of {scenarios.length} answered
-            {allAnswered && ", ready to see your results"}
+            {allAnswered && " — ready to see your results"}
           </p>
         </div>
 
@@ -350,7 +311,6 @@ export default function AgenticAIPage() {
               </div>
             </div>
 
-            {/* Personalized interpretation based on score */}
             <p className="text-base text-gray-700 leading-relaxed">
               {results.approved <= 3
                 ? "You drew a tight line. You want AI to assist, not act, keeping humans in control of decisions that have real consequences. This reflects a cautious approach most regulators currently favor for agentic systems."
@@ -361,7 +321,61 @@ export default function AgenticAIPage() {
           </div>
         )}
 
-        {/* Step 3: Reflect */}
+        {/* Step 2 */}
+        <div className="flex items-center gap-3 mb-5 mt-8">
+          <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
+            2
+          </div>
+          <h2 className="text-xl font-semibold text-gray-900">Understand</h2>
+        </div>
+
+        <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-4">
+          <div>
+            <p className="text-base font-semibold text-purple-900 mb-2">
+              What makes AI "agentic"?
+            </p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              Unlike generative AI, which is constrained to producing text, image, or audio
+              content, agentic AI systems can take action on behalf of a user and autonomously
+              pursue goals with minimal human oversight. An agentic system is closer to filling
+              the place of a parent in assisting a student with a form or application, whereas
+              generative AI is closer to resembling a customer service representative in terms
+              of the level of support it can provide students. Agentic AI systems are already
+              being deployed in schools across the US. Last year, Tennessee approved Kira, an
+              integrated agentic AI system that could do everything from design curriculum and
+              tutor students, to autograding and attendance.
+            </p>
+          </div>
+
+          <div className="border-t border-purple-200 pt-4">
+            <p className="text-base font-semibold text-purple-900 mb-2">
+              Why does autonomy level matter in educational contexts?
+            </p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              
+            </p>
+          </div>
+
+          <div className="border-t border-purple-200 pt-4">
+            <p className="text-base font-semibold text-purple-900 mb-2">
+              What unique risks does agentic AI pose to students?
+            </p>
+            <p className="text-base text-purple-800 leading-relaxed">
+             
+            </p>
+          </div>
+
+          <div className="border-t border-purple-200 pt-4">
+            <p className="text-base font-semibold text-purple-900 mb-2">
+              What unique benefits does agentic AI promise?
+            </p>
+            <p className="text-base text-purple-800 leading-relaxed">
+              
+            </p>
+          </div>
+        </div>
+
+        {/* Step 3 */}
         <div className="flex items-center gap-3 mb-5 mt-8">
           <div className="w-9 h-9 rounded-full border-2 border-gray-700 flex items-center justify-center text-sm font-semibold text-gray-700 shrink-0">
             3
@@ -373,9 +387,7 @@ export default function AgenticAIPage() {
           <p className="text-base font-semibold text-gray-900 mb-4">Questions to Consider</p>
           <div className="space-y-3">
             {[
-              "Who is responsible when an agentic AI makes a mistake? Should the user, the company, or the AI model itself be to blame?",
-              "Should students be allowed to use agentic AI? At what age can students be trusted to use autonomous systems appropriately?",
-              "What would it take for you to trust an AI to act fully on your behalf?",
+             ,
             ].map((question) => (
               <div
                 key={question}
@@ -389,12 +401,65 @@ export default function AgenticAIPage() {
 
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-green-900">What You Can Do</p>
+          <p className="text-base font-semibold text-green-900 mb-4">What You Can Do</p>
+          <ul className="space-y-3 text-base text-green-800">
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span></span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span></span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span></span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span></span>
+            </li>
+          </ul>
         </div>
 
-        {/* Learn More */}
+        {/* Learn More / Sources */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900">Learn More</p>
+          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
+          <div className="space-y-2">
+            {[
+              {
+                label: "What Is Agentic AI and How Can Agencies Use It to Enhance Citizen Services?",
+                href: "https://statetechmagazine.com/article/2025/03/what-agentic-ai-and-how-can-agencies-use-it-enhance-citizen-services",
+                ariaLabel: "Read about agentic AI in public services",
+              },
+              {
+                label: "The Age of Agentic AI",
+                href: "https://www.technologyreview.com/2025/01/06/1109267/agentic-ai/",
+                ariaLabel: "Read MIT Technology Review on agentic AI",
+              },
+              {
+                label: "Building Effective Agents",
+                href: "https://www.anthropic.com/research/building-effective-agents",
+                ariaLabel: "Read Anthropic's research on building effective agents",
+              },
+              {
+                label: "AI and Your Consumer Rights",
+                href: "https://consumer.ftc.gov/features/artificial-intelligence",
+                ariaLabel: "Read FTC guidance on AI and consumer rights",
+              },
+            ].map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.ariaLabel}
+                className="flex items-center gap-1.5 text-base text-blue-600 hover:underline"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Footer Nav */}
