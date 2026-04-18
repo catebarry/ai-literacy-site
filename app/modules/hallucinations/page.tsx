@@ -455,31 +455,33 @@ export default function HallucinationsModule() {
             </div>
           </div>
 
-          <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-4">How to Mitigate the Risks of AI Hallucinations</p>
-            <div className="space-y-4">
-              <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Prompt Engineering</p>
-                <p className="text-base text-purple-800 leading-relaxed">Avoiding ambiguous language, assigning AI a role (e.g., &quot;act as a patient tutor to help me understand the steps to solve this problem&quot;), instructing the AI to ask clarifying questions if uncertain, and providing ample context can all help reduce the rate of hallucination. Prompt-based mitigation has been found to reduce hallucinations by ~22 percentage points.</p>
-              </div>
-              <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Understanding the Difference Between Retrieval and Generation</p>
-                <p className="text-base text-purple-800 leading-relaxed">Consider using newer AI models with more advanced RAG (Retrieval-Augmented Generation) that pull from external sources before generating a response based on pattern matching from training data. RAG can reduce hallucinations by up to 71%, especially for fact-based queries.</p>
-              </div>
-              <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Play to the Strengths of AI and Avoid AI Weaknesses</p>
-                <p className="text-base text-purple-800 leading-relaxed">AI is better at brainstorming, outlining, editing, and summarizing, and performs poorly when forced to retrieve specific factual claims or generate accurate references.</p>
-              </div>
-              <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Model Verification</p>
-                <p className="text-base text-purple-800 leading-relaxed">Using one AI model to double-check another can catch some hallucinations, but it is not a perfect solution because different models often have similar training data. A better approach is to check AI content using internet searches, library databases, and verifiable sources.</p>
-              </div>
-              <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Cross-Verification Using Traditional Sources</p>
-                <p className="text-base text-purple-800 leading-relaxed">Normally, searching the internet for a source title that matches the title from the AI-generated citation is sufficient as a means to manually crosscheck, but another way to check if a research paper exists is to copy and paste the title into the search bar on Google Scholar. If no results appear, chances are the source was either cited improperly or entirely fabricated.</p>
-              </div>
-            </div>
-          </div>
+        </div>
+
+        {/* What You Can Do */}
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
+          <p className="text-base font-semibold text-green-900 mb-4">What You Can Do</p>
+          <ul className="space-y-3 text-base text-green-800">
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Avoid ambiguous language and provide ample context in your prompts. Instructing the AI to ask clarifying questions if uncertain can reduce hallucination rates by roughly 22 percentage points.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Use AI models with Retrieval-Augmented Generation (RAG) for fact-based queries. RAG pulls from external sources rather than relying purely on pattern matching, and can reduce hallucinations by up to 71%.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Play to AI strengths: use it for brainstorming, outlining, editing, and summarizing. Avoid relying on it to retrieve specific factual claims or generate accurate citations.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>Never trust a citation without checking it. Paste the title into Google Scholar — if it does not appear, the source was likely fabricated or cited incorrectly.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span>✓</span>
+              <span>If you use one AI model to double-check another, remember that different models often share similar training data and blind spots. Cross-checking with library databases and verifiable sources is more reliable.</span>
+            </li>
+          </ul>
         </div>
 
         {/* Step 3 */}
