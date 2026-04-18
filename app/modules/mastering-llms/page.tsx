@@ -12,12 +12,12 @@ const scenarios = [
     id: "research_outline",
     goal: "Generate a highly structured, academically rigorous outline for a paper's introduction.",
     context:
-      "A student in North Carolina is writing a 25-35 page research paper titled 'Defining Social Engineering in the Age of Artificial Intelligence'.",
-    weakPrompt: "Give me an outline for an introduction about AI and social engineering.",
+      "A student at Duke University is writing a 25-35 page research paper titled 'Minimizing Energy Consumption with AI'.",
+    weakPrompt: "Give me an outline for an introduction about AI energy consumption.",
     options: [
       {
         id: "opt_1",
-        text: "Act as a cybersecurity professor. Create a detailed outline for the introduction of a 30-page academic research paper titled 'Defining Social Engineering in the Age of Artificial Intelligence'. Include specific bullet points for the hook, thesis statement, and the transition into modern AI threat vectors.",
+        text: "Act as a cybersecurity professor. Create a detailed outline for the introduction of a 30-page academic research paper titled 'Minimizing Energy Consumption with AI'. Include specific bullet points for the hook, thesis statement, and the transition into modern AI threat vectors.",
         type: "optimal",
         explanation:
           "Excellent. By defining the length of the actual paper, the AI scales the introduction appropriately. The persona ensures an academic tone, and specific structural requests guide the exact output.",
@@ -26,7 +26,7 @@ const scenarios = [
       },
       {
         id: "opt_2",
-        text: "Write a 30-page research paper about AI and social engineering, starting with the introduction.",
+        text: "Write a 30-page research paper about AI and energy consumption, starting with the introduction.",
         type: "fail",
         explanation:
           "Asking an LLM to write a massive academic paper in one shot results in a shallow, repetitive, and hallucinated mess. LLMs excel at iterative generation, not massive single outputs.",
@@ -35,7 +35,7 @@ const scenarios = [
       },
       {
         id: "opt_3",
-        text: "What are the main points I should include in an introduction about social engineering?",
+        text: "What are the main points I should include in an introduction about AI energy consumption?",
         type: "suboptimal",
         explanation:
           "This is a basic search query, not a generative prompt. The AI will give generic advice on how to write an introduction rather than drafting the specific outline needed.",
@@ -46,37 +46,37 @@ const scenarios = [
   },
   {
     id: "model_un",
-    goal: "Draft a policy memo representing a specific national perspective on technology.",
+    goal: "Draft a position paper representing a specific national perspective on technology.",
     context:
-      "A student participating in a simulated United Nations working group needs to draft a memo representing Indonesia's infrastructure layer of the AI tech stack.",
-    weakPrompt: "Write a memo about Indonesia's AI infrastructure.",
+      "A student participating in a Model UN conference needs to draft a position paper representing Kenya's stance on AI innovation.",
+    weakPrompt: "Write a memo about Kenya's AI innovation.",
     options: [
       {
         id: "opt_1",
-        text: "Write a really professional policy memo about Indonesia's AI infrastructure and what they are doing to build data centers.",
+        text: "Write a really professional position paper about Kenya's AI innovation and what they are doing to foster AI development.",
         type: "suboptimal",
         explanation:
           "Better, but it leaves the structure up to the AI, which often results in overly wordy text that lacks the specific formatting required for UN simulations.",
         simulatedOutput:
-          "To Whom It May Concern: Indonesia is making great strides in Artificial Intelligence. The infrastructure layer is growing rapidly...",
+          "To Whom It May Concern: Kenya is making great strides in Artificial Intelligence. Innovation is growing rapidly...",
       },
       {
         id: "opt_2",
-        text: "Provide a list of facts about Indonesia's technology sector and AI.",
+        text: "Provide a list of facts about Kenya's technology sector and AI.",
         type: "fail",
         explanation:
-          "This abandons the goal of writing a memo entirely and just asks for trivia. It doesn't leverage the AI's ability to format and synthesize.",
+          "This abandons the goal of writing a position paper entirely and just asks for trivia. It doesn't leverage the AI's ability to format and synthesize.",
         simulatedOutput:
-          "- Indonesia has a growing digital economy.\n- The government launched a national AI strategy in 2020.\n- Cloud computing is expanding...",
+          "Kenya has a growing digital economy. Cloud computing is expanding...",
       },
       {
         id: "opt_3",
-        text: "Act as a delegate for Indonesia in a UN working group. Draft a 3-paragraph policy memo outlining our current AI infrastructure layer. Focus specifically on data center investments and cloud sovereignty. Adopt a diplomatic, persuasive tone.",
+        text: "Act as a delegate for Kenya in a model UN conference. Draft a 3-paragraph position paper outlining our current AI innovation goals. Focus specifically on data center investments and cloud sovereignty. Adopt a diplomatic, persuasive tone.",
         type: "optimal",
         explanation:
           "Perfect. Assigning the 'delegate' persona instantly fixes the tone. Providing length constraints (3 paragraphs) and specific topical focuses prevents the AI from generating irrelevant fluff.",
         simulatedOutput:
-          "MEMORANDUM\n\nThe Republic of Indonesia recognizes that robust digital infrastructure is the bedrock of equitable AI advancement. Currently, our nation is prioritizing the expansion of sovereign data centers...",
+          "The delegation of Kenya recognizes that robust digital infrastructure is the bedrock of equitable AI advancement. Currently, our nation is prioritizing the expansion of sovereign data centers...",
       },
     ],
   },
