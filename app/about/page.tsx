@@ -7,7 +7,7 @@ export default function AboutPage() {
           </h1>
           <div className="space-y-5">
   
-            {/* Our Mission */}
+            {/* Mission */}
             <div className="bg-white border border-gray-200 rounded-lg p-8">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Our Mission</h2>
               <p className="text-gray-600 text-base leading-relaxed mb-4">
