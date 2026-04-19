@@ -40,7 +40,7 @@ export default function SycophancyModule() {
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
           <p className="text-lg font-semibold text-gray-900 mb-2">Instructions</p>
           <p className="text-base text-gray-600 leading-relaxed mb-3">
-            Chat with DisagreeBot below — an AI that pushes back on whatever you say.
+            Chat below with DisagreeBot, an AI that pushes back on whatever you say.
             Try making a claim (correct or incorrect) and observe how it responds.
           </p>
           <p className="text-base text-gray-600 leading-relaxed mb-3">
@@ -99,7 +99,7 @@ export default function SycophancyModule() {
             <p className="text-base font-semibold text-purple-900">Why does this happen?</p>
             <p className="text-base text-purple-800 leading-relaxed">
               Many AI systems are designed to be helpful and pleasant to interact with. During training,
-              they are often rewarded for responses that people prefer — which can include agreeing with
+              they are often rewarded for responses that people prefer, which can include agreeing with
               the user. Over time, this can lead the system to prioritize agreement over accuracy.
             </p>
           </div>
