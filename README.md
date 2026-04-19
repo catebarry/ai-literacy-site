@@ -3,6 +3,8 @@ An interactive educational website designed to help students and teachers unders
 
 The goal of this project is to move beyond passive explanations and instead provide hands-on, experiential learning through activities that demonstrate real AI behaviors like hallucinations, sycophancy, bias, and more.
 
+Visit live public website: https://ailiteracylab.vercel.app/
+
 ## Project Overview
 The website contains a structured as a set of interactive modules, each focused on a specific concept or risk in AI.
 
@@ -34,12 +36,6 @@ Then open: http://localhost:3000
 
 ### 4. Development
 Modify `page.tsx` files to edit the webpages. The folder path represents the url link. The page auto-updates as you edit the files.
-
-## Deploy on Vercel (TO DO!!!)
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 ## AI Assistance Statement
 Portions of this project were developed with the assistance of AI tools, including OpenAI’s ChatGPT, Anthropic’s Claude, and GitHub Copilot. These tools supported implementation work in TypeScript and were also used to help refine ideas, structure content, and troubleshoot issues during development.
