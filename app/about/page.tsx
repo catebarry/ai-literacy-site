@@ -65,11 +65,37 @@ export default function AboutPage() {
   
             {/* Contact & Feedback */}
             <div className="bg-white border border-gray-200 rounded-lg p-8">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Contact & Feedback</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">
+                Contact & Feedback
+              </h2>
+
               <p className="text-gray-600 text-base leading-relaxed mb-4">
-                Have suggestions or questions? 
-                Email: cate.barry@gmail.com
+                Have questions, feedback, or ideas for improvement? We'd love to hear from you.
               </p>
+
+              <div className="space-y-2 text-gray-600 text-base">
+                <p>
+                  Email:{" "}
+                  <a
+                    href="mailto:cate.barry@gmail.com"
+                    className="text-gray-900 underline hover:text-gray-700"
+                  >
+                    cate.barry@gmail.com
+                  </a>
+                </p>
+
+                <p>
+                  GitHub:{" "}
+                  <a
+                    href="https://github.com/catebarry/ai-literacy-site"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-900 underline hover:text-gray-700"
+                  >
+                    View the project repository
+                  </a>
+                </p>
+              </div>
             </div>
   
           </div>
