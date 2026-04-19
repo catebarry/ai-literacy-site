@@ -92,7 +92,7 @@ export default function AboutPage() {
                     rel="noopener noreferrer"
                     className="text-gray-900 underline hover:text-gray-700"
                   >
-                    https://github.com/catebarry/ai-literacy-site
+                    github.com/catebarry/ai-literacy-site
                   </a>
                 </p>
               </div>
