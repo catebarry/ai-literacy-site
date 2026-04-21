@@ -344,7 +344,7 @@ export default function MasteringLLMsPage() {
               The Hidden Instructions: System Prompts
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              When you type a question into an LLM, you are submitting a <strong>User Prompt</strong>. However, before your text ever reaches the AI, it is wrapped in an invisible set of instructions called a <strong>System Prompt</strong>. The system prompt dictates the model's core behavior, safety boundaries, and default "helpful assistant" tone. By assigning a persona in your prompt (e.g., "Act as a strict copy editor"), you can effectively override these defaults and shape the invisible layer to your advantage. You can experiment with system prompts via the "Custom Instructions" feature on Claude and ChatGPT, or "Gems" on Gemini. These system prompts will act as a permanent set of rules that the LLM applies to every conversation until you remove or change the instructions. 
+              When you type a question into an LLM, you are submitting a <strong>User Prompt</strong>. But before your text reaches the AI, it is wrapped in invisible instructions called a <strong>System Prompt</strong>. System prompts dictate the model's behavior, safety boundaries, and default tone. You can write your own through "Custom Instructions" on Claude and ChatGPT, or "Gems" on Gemini: permanent rules the AI applies to every conversation until you change them. 
             </p>
           </div>
 
@@ -353,7 +353,7 @@ export default function MasteringLLMsPage() {
               Give It a Role: Personas and Context Setting for Prompting
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              AI models are trained on an enormous amount of human-written text, giving it the ability to "think like" a doctor, a game designer, a chef, or a sports coach, depending on how you frame the conversation. When you assign the AI a <strong>role or persona</strong> at the start of your prompt, you're steering it toward a specific part of everything it has learned. There are two parts of good context setting: 1) who the AI is, and 2) who you are. This works because AI models are <strong>pattern-matching engines</strong>, and you are giving it the information it needs to match the right patterns from its training. The more it knows about your situation, the better it can calibrate its response. 
+              AI models are trained on vast amounts of human-written text, giving them the ability to "think like" a doctor, game designer, chef, or coach depending on how you frame the conversation. Good context setting has two parts: <strong>who the AI is, and who you are</strong>. Because LLMs are pattern-matching engines, the more context you give, the better they match the right patterns from their training and calibrate their response to your solution.
             </p>
           </div>
 
@@ -362,7 +362,7 @@ export default function MasteringLLMsPage() {
               Superpowers: Tools and Capabilities
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              LLMs are text generators that predict what words should come next based on what they've learned. Frontier AI platforms often include added <strong>tools and capabilities</strong> that give the AI new abilities beyond generating text. These tools are like apps on a phone: the phone can still work without them, but the right app can do something the phone couldn't on its own. Some examples include <strong>web search</strong>, where the AI can look up current information in real time, or <strong>code execution</strong>, where the AI can write code and actually run it, and <strong>image generation</strong>, which lets the AI create original images from text descriptions. Not every platform offers every tool, and some tools have to be enabled before the AI can use them.
+              LLMs are text generators at their core, but frontier AI platforms add tools that unlock entirely new abilities. Think of them like apps on a phone, where the phone works without them, but the right app does something it couldn't before. Common tools include <strong>web search</strong> (real-time information lookup), <strong>code execution</strong> (writing and running code), and <strong>image generation</strong> (creating visuals from text descriptions). Not every platform offers every tool, and some must be enabled before the AI can use them.
             </p>
           </div>
 
@@ -371,7 +371,7 @@ export default function MasteringLLMsPage() {
               Think Harder: Reasoning and Extended Thinking Modes
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              For most questions, LLMs respond almost instantly. For complex problems, however, that instant response time can be mroe unreliable. AI models generate answers <strong>one word (or token) at a time</strong>, predicting what comes next based on everything before it. When a problem is simple, this works great. When a problem is complex, rushing to an answer can lead the model down the wrong path early on, causing it to build its response on an incorrect foundation. Today's frontier models have a dedicated <strong>reasoning or extended thinking mode</strong> that is built around deep reasoning. These modes tell the AI to slow down and provide a more thoughtful response. The tradeoff is <strong>time and cost</strong>. A regular response might take 2 seconds, while an extended thinking response might take up to a minute. Reasoning mode is helpful if the problem has multiple steps, involves trade-offs, requires logic or math, or if you've gotten a wrong answer before.
+              LLMs generate answers one word at a time, predicting what comes next. For simple questions, this works well. For complex ones, moving too fast can send the model down the wrong path, and everything after builds on that mistake. <strong>Extended thinking modes</strong> tell the AI to slow down and work through problems more carefully before responding. The tradeoff is time: a standard response takes seconds, while extended thinking can take up to a minute. It's most useful for multi-step problems, logic and math, or questions where you've gotten wrong answers before. 
             </p>
           </div>
         </div>
@@ -388,8 +388,8 @@ export default function MasteringLLMsPage() {
           <p className="text-base font-semibold text-gray-900 mb-4">Questions to Consider</p>
           <div className="space-y-3">
             {[
-              "If you were to set up 'Custom Instructions' for your main AI account today, what personal context would you provide to make its answers more relevant to you?",
-              "Think of a recent task where an AI gave you a frustrating or generic answer. How could you have used a Persona or Format Constraint to improve the output?",
+              "How might the same AI give you different responses depending on who deployed it and what system prompt they wrote?",
+              "How would you decide which tools and features to use for a given problem?",
               "How might assigning an AI a specific persona (e.g., 'Act as a conservative think-tank analyst' vs. 'Act as a progressive policy writer') change the underlying biases in its output?",
             ].map((question, idx) => (
               <div
@@ -408,19 +408,19 @@ export default function MasteringLLMsPage() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span className="font-bold">✓</span>
-              <span><strong>Assign a Role:</strong> Always start complex tasks by telling the AI who it is acting as (e.g., "Act as an expert data analyst").</span>
+              <span>Write your own system prompt in Custom Instructions (Claude, ChatGPT) or Gems (Gemini) to set permanent rules for how the AI responds to you.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="font-bold">✓</span>
-              <span><strong>Define the Output:</strong> Never leave the length or format up to the AI. Specify "Write exactly 3 paragraphs" or "Output as a markdown table."</span>
+              <span>Set context before you ask: tell the AI who it is and who you are to get more accurate, relevant responses.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="font-bold">✓</span>
-              <span><strong>Provide Examples:</strong> If you want a specific tone or structure, paste an example of your own writing into the prompt and say "Match this style."</span>
+              <span>Check which tools are enabled on your platform before assuming the AI can search the web, run code, or generate images.</span>
             </li>
             <li className="flex items-start gap-2">
               <span className="font-bold">✓</span>
-              <span><strong>Iterate, Don't Restart:</strong> Treat prompting as a conversation. If the first output isn't quite right, reply with specific critiques like, "That's too formal. Make it punchier and cut the word count in half."</span>
+              <span>Switch to extended thinking or reasoning mode when working through complex, multi-step problems that require more careful analysis.</span>
             </li>
           </ul>
         </div>
@@ -441,14 +441,14 @@ export default function MasteringLLMsPage() {
                 ariaLabel: "Explore Anthropic's prompt tutorial",
               },
               {
-                label: "Google Cloud: Designing Prompts",
-                href: "https://cloud.google.com/vertex-ai/docs/generative-ai/text/prompt-design",
-                ariaLabel: "Read Google's prompt design documentation",
+                label: "Google: Prompt Design Strategies",
+                href: "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+                ariaLabel: "Read Google's prompt design strategies for Gemini",
               },
               {
-                label: "DAIR.AI: The Prompt Engineering Guide",
-                href: "https://www.promptingguide.ai/",
-                ariaLabel: "Read the open source prompt engineering guide",
+                label: "Anthropic: Extended Thinking and Reasoning",
+                href: "https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking",
+                ariaLabel: "Learn how extended thinking works in Claude",
               },
             ].map((item) => (
               <a
