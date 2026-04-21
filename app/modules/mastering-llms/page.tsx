@@ -49,7 +49,7 @@ const scenarios = [
     goal: "Draft a position paper representing a specific national perspective on technology.",
     context:
       "A student participating in a Model UN conference needs to draft a position paper representing Kenya's stance on AI innovation.",
-    weakPrompt: "Write a memo about Kenya's AI innovation.",
+    weakPrompt: "Write a position papergi about Kenya's AI innovation.",
     options: [
       {
         id: "opt_1",
@@ -248,10 +248,10 @@ export default function MasteringLLMsPage() {
 
         {/* Header */}
         <h1 className="text-2xl font-bold text-gray-900 mb-3">
-          Mastering LLMs: Beyond the Chatbox
+          Mastering LLMs: Prompts, Systems, and Personalization
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
-          The difference between a frustrating AI experience and a highly productive one usually comes down to prompt engineering. Learn how to steer AI, use system instructions, and tailor outputs to your exact needs.
+          Learn how to effectively harness your LLM with prompt engineering and system instructions to tailor outputs to your exact needs. 
         </p>
 
         {/* Step 1 */}
