@@ -20,6 +20,11 @@ export default function AboutPage() {
                 Our goal is to empower everyone to use AI tools thoughtfully,
                 recognize their limitations, and understand their societal implications.
               </p>
+              <p className="text-gray-600 text-base leading-relaxed">
+                The website is intended to evolve over time with new modules and activities 
+                to reflect the rapidly changing AI landscape and user feedback.
+                We welcome your input to help shape the future of this project!
+              </p>
             </div>
   
             {/* For Students */}
@@ -70,7 +75,7 @@ export default function AboutPage() {
               </h2>
 
               <p className="text-gray-600 text-base leading-relaxed mb-4">
-                Have questions, feedback, or ideas for improvement? We'd love to hear from you.
+                Have questions, feedback, or ideas for new modules? We'd love to hear from you.
               </p>
 
               <div className="space-y-2 text-gray-600 text-base">
