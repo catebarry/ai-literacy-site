@@ -16,14 +16,9 @@ export default function AboutPage() {
                 hands-on activities and guided reflection, learners explore how AI
                 systems work and where they can go wrong.
               </p>
-              <p className="text-gray-600 text-base leading-relaxed mb-4">
+              <p className="text-gray-600 text-base leading-relaxed">
                 Our goal is to empower everyone to use AI tools thoughtfully,
                 recognize their limitations, and understand their societal implications.
-              </p>
-              <p className="text-gray-600 text-base leading-relaxed">
-                The website is intended to evolve over time with new modules and activities 
-                to reflect the rapidly changing AI landscape and user feedback.
-                We welcome your input to help shape the future of this project!
               </p>
             </div>
   
@@ -73,7 +68,11 @@ export default function AboutPage() {
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
                 Contact & Feedback
               </h2>
-
+              <p className="text-gray-600 text-base leading-relaxed mb-4">
+                The website is intended to evolve over time with new modules and activities 
+                to reflect the rapidly changing AI landscape and user feedback.
+                We welcome your input to help shape the future of this project!
+              </p>
               <p className="text-gray-600 text-base leading-relaxed mb-4">
                 Have questions, feedback, or ideas for new modules? We'd love to hear from you.
               </p>
