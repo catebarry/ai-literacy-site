@@ -331,7 +331,7 @@ export default function HallucinationsModule() {
         </Link>
 
         <h1 className="text-2xl font-bold text-gray-900 mb-3">
-          Hallucinations: When AI Is Confident but Wrong
+          Hallucinations: When AI Is Confident But Wrong
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
           AI hallucination is the term we use to broadly classify inaccurate or fabricated
