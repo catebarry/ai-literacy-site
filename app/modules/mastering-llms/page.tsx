@@ -344,7 +344,7 @@ export default function MasteringLLMsPage() {
               The Hidden Instructions: System Prompts
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              When you type a question into an AI, you are submitting a <strong>User Prompt</strong>. However, before your text ever reaches the AI, it is wrapped in an invisible set of instructions called a <strong>System Prompt</strong>. The system prompt dictates the model's core behavior, safety boundaries, and default "helpful assistant" tone. By assigning a persona in your prompt (e.g., "Act as a strict copy editor"), you can effectively override these defaults and shape the invisible layer to your advantage. You can experiment with system prompts via the "Custom Instructions" feature on Claude and ChatGPT, or "Gems" on Gemini. These system prompts will act as a permanent set of rules that the LLM applies to every conversation until you remove or change the instructions. 
+              When you type a question into an LLM, you are submitting a <strong>User Prompt</strong>. However, before your text ever reaches the AI, it is wrapped in an invisible set of instructions called a <strong>System Prompt</strong>. The system prompt dictates the model's core behavior, safety boundaries, and default "helpful assistant" tone. By assigning a persona in your prompt (e.g., "Act as a strict copy editor"), you can effectively override these defaults and shape the invisible layer to your advantage. You can experiment with system prompts via the "Custom Instructions" feature on Claude and ChatGPT, or "Gems" on Gemini. These system prompts will act as a permanent set of rules that the LLM applies to every conversation until you remove or change the instructions. 
             </p>
           </div>
 
@@ -359,16 +359,16 @@ export default function MasteringLLMsPage() {
 
           <div className="border-t border-purple-200 pt-4">
             <p className="text-base font-semibold text-purple-900 mb-2">
-              What is Chain-of-Thought (CoT)?
+              Superpowers: Tools and Capabilities
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              LLMs don't "think," they predict. If you ask a complex logic or math question, forcing it to generate the final answer immediately often results in errors. By simply adding the phrase <strong>"Think step-by-step"</strong> to the end of your prompt, you force the model to generate its intermediate reasoning. This extra generation uses more computing power and drastically reduces logical failures.
+              LLMs are text generators that predict what words should come next based on what they've learned. Frontier AI platforms often include added <strong>tools and capabilities</strong> that give the AI new abilities beyond generating text. These tools are like apps on a phone: the phone can still work without them, but the right app can do something the phone couldn't on its own. Some examples include <strong>web search</strong>, where the AI can look up current information in real time, or <strong>code execution</strong>, where the AI can write code and actually run it, and <strong>image generation</strong>, which lets the AI create original images from text descriptions. Not every platform offers every tool, and some tools have to be enabled before the AI can use them.
             </p>
           </div>
 
           <div className="border-t border-purple-200 pt-4">
             <p className="text-base font-semibold text-purple-900 mb-2">
-              Why does personalization matter?
+              Remember Me: Memory and Persistent Context
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
               Most frontier models now offer "Custom Instructions" or "Gems." These features allow you to write your own permanent system prompts. You can tell the AI exactly who you are, what your preferences are, and how you want it to format its responses every single time, saving you from having to rewrite the same context in every new chat session.
