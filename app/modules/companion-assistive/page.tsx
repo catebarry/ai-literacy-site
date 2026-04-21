@@ -649,7 +649,7 @@ export default function CompanionAssistivePage() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Ask whether an AI tool is designed to help you complete a task or to keep you engaged</span>
+              <span>Ask whether an AI tool is designed to help you complete a task or to keep you engaged.</span>
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
@@ -657,7 +657,7 @@ export default function CompanionAssistivePage() {
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Advocate for schools to have clear policies on which AI features are permitted and why</span>
+              <span>Advocate for schools to have clear policies on which AI features are permitted and why.</span>
             </li>
           </ul>
         </div>
