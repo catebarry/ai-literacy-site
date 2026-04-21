@@ -96,7 +96,7 @@ export default function DeepfakesCSAMPage() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources </p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More / Sources </p>
           <div className="space-y-2">
             {[
               {

@@ -331,7 +331,7 @@ export default function AgenticAIPage() {
 
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-4">
           <div>
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               What makes AI "agentic"?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -348,7 +348,7 @@ export default function AgenticAIPage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               Why does autonomy level matter in educational contexts?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -357,7 +357,7 @@ export default function AgenticAIPage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               What unique risks does agentic AI pose to students?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -366,7 +366,7 @@ export default function AgenticAIPage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               What unique benefits does agentic AI promise?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -384,7 +384,7 @@ export default function AgenticAIPage() {
         </div>
 
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">Questions to Consider</p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Questions to Consider</p>
           <div className="space-y-3">
             {[
               "What would it take for you to trust an AI to act fully on your behalf?",
@@ -405,7 +405,7 @@ export default function AgenticAIPage() {
 
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-green-900 mb-4">What You Can Do</p>
+          <p className="text-lg font-semibold text-green-900 mb-4">What You Can Do</p>
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
@@ -424,7 +424,7 @@ export default function AgenticAIPage() {
 
         {/* Learn More / Sources */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More / Sources</p>
           <div className="space-y-2">
             {[
               {

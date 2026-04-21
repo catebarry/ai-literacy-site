@@ -96,7 +96,7 @@ export default function DeepfakesModule() {
 
         {/* Explanation */}
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
-          <p className="text-base font-semibold text-purple-900">What are deepfakes?</p>
+          <p className="text-lg font-semibold text-purple-900">What are deepfakes?</p>
           <p className="text-base text-purple-800 leading-relaxed">
             Deepfakes are AI-generated images, videos, or audio designed to look or
             sound real. They are created using generative models trained on large
@@ -104,7 +104,7 @@ export default function DeepfakesModule() {
           </p>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-3">Why does this matter?</p>
+            <p className="text-lg font-semibold text-purple-900 mb-3">Why does this matter?</p>
             <p className="text-base text-purple-800 leading-relaxed">
               As deepfakes become more realistic, it becomes easier to mislead people
               and harder to trust media at first glance. AI literacy means learning not
@@ -123,7 +123,7 @@ export default function DeepfakesModule() {
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">
+          <p className="text-lg font-semibold text-gray-900 mb-4">
             Questions to Consider
           </p>
           <div className="space-y-3">
@@ -145,7 +145,7 @@ export default function DeepfakesModule() {
 
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-green-900 mb-4">
+          <p className="text-lg font-semibold text-green-900 mb-4">
             What You Can Do
           </p>
 
@@ -180,7 +180,7 @@ export default function DeepfakesModule() {
         
         {/* ── AIG-CSAM Subsection ── */}
         <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-amber-900 mb-2">
+          <p className="text-lg font-semibold text-amber-900 mb-2">
             Serious harms of deepfakes
           </p>
           <p className="text-base text-amber-800 leading-relaxed mb-4">
@@ -198,7 +198,7 @@ export default function DeepfakesModule() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources </p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More / Sources </p>
           <div className="space-y-2">
             {[
               {

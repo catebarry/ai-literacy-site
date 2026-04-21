@@ -340,7 +340,7 @@ export default function MasteringLLMsPage() {
 
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-4">
           <div>
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               The Hidden Instructions: System Prompts
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -349,7 +349,7 @@ export default function MasteringLLMsPage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               Give It a Role: Personas and Context Setting for Prompting
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -358,7 +358,7 @@ export default function MasteringLLMsPage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               Superpowers: Tools and Capabilities
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -367,7 +367,7 @@ export default function MasteringLLMsPage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               Think Harder: Reasoning and Extended Thinking Modes
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -385,7 +385,7 @@ export default function MasteringLLMsPage() {
         </div>
 
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">Questions to Consider</p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Questions to Consider</p>
           <div className="space-y-3">
             {[
               "How might the same AI give you different responses depending on who deployed it and what system prompt they wrote?",
@@ -404,7 +404,7 @@ export default function MasteringLLMsPage() {
 
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-green-900 mb-4">What You Can Do</p>
+          <p className="text-lg font-semibold text-green-900 mb-4">What You Can Do</p>
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span className="font-bold">✓</span>
@@ -427,7 +427,7 @@ export default function MasteringLLMsPage() {
 
         {/* Learn More / Sources */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More / Sources</p>
           <div className="space-y-2">
             {[
               {

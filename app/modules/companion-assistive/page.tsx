@@ -529,7 +529,7 @@ export default function CompanionAssistivePage() {
 
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-4">
           <div>
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               What is assistive AI?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -540,7 +540,7 @@ export default function CompanionAssistivePage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               What is companion AI?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -555,7 +555,7 @@ export default function CompanionAssistivePage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               Why does the distinction matter for young people?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -574,7 +574,7 @@ export default function CompanionAssistivePage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               What does the GUARD Act say?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -600,7 +600,7 @@ export default function CompanionAssistivePage() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">
+            <p className="text-lg font-semibold text-purple-900 mb-2">
               What about agentic AI?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -623,7 +623,7 @@ export default function CompanionAssistivePage() {
         </div>
 
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">
+          <p className="text-lg font-semibold text-gray-900 mb-4">
             Questions to Consider
           </p>
           <div className="space-y-3">
@@ -645,7 +645,7 @@ export default function CompanionAssistivePage() {
 
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-green-900 mb-4">What You Can Do</p>
+          <p className="text-lg font-semibold text-green-900 mb-4">What You Can Do</p>
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
@@ -664,7 +664,7 @@ export default function CompanionAssistivePage() {
 
         {/* Learn More / Sources */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More / Sources</p>
           <div className="space-y-2">
             {[
               {

@@ -88,7 +88,7 @@ export default function SycophancyModule() {
 
         {/* Explanation */}
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
-          <p className="text-base font-semibold text-purple-900">What is sycophancy?</p>
+          <p className="text-lg font-semibold text-purple-900">What is sycophancy?</p>
           <p className="text-base text-purple-800 leading-relaxed">
             Sycophancy is when an AI system excessively agrees with you or tries to flatter you.
             It might say your argument is strong when it isn&apos;t, avoid correcting mistakes, or
@@ -96,7 +96,7 @@ export default function SycophancyModule() {
           </p>
 
           <div className="border-t border-purple-200 pt-4 space-y-3">
-            <p className="text-base font-semibold text-purple-900">Why does this happen?</p>
+            <p className="text-lg font-semibold text-purple-900">Why does this happen?</p>
             <p className="text-base text-purple-800 leading-relaxed">
               Many AI systems are designed to be helpful and pleasant to interact with. During training,
               they are often rewarded for responses that people prefer, which can include agreeing with
@@ -105,7 +105,7 @@ export default function SycophancyModule() {
           </div>
 
           <div className="border-t border-purple-200 pt-4 space-y-3">
-            <p className="text-base font-semibold text-purple-900">Why does this matter?</p>
+            <p className="text-lg font-semibold text-purple-900">Why does this matter?</p>
             <p className="text-base text-purple-800 leading-relaxed">
               An AI that always agrees might feel helpful, but it can be misleading. It may reinforce
               incorrect ideas, give you false confidence, and make it harder to think critically about
@@ -124,7 +124,7 @@ export default function SycophancyModule() {
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">
+          <p className="text-lg font-semibold text-gray-900 mb-4">
             Questions to Consider
           </p>
           <div className="space-y-3">
@@ -145,7 +145,7 @@ export default function SycophancyModule() {
 
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-green-900 mb-4">
+          <p className="text-lg font-semibold text-green-900 mb-4">
             What You Can Do
           </p>
 
@@ -190,7 +190,7 @@ export default function SycophancyModule() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More / Sources</p>
 
           <div className="space-y-2">
             {[

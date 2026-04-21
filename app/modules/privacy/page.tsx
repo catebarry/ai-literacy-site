@@ -606,7 +606,7 @@ export default function PrivacyModule() {
 
         {/* Why it matters */}
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
-          <p className="text-base font-semibold text-purple-900">
+          <p className="text-lg font-semibold text-purple-900">
             Why is it important to protect your privacy?
           </p>
           <p className="text-base text-purple-800 leading-relaxed">
@@ -622,7 +622,7 @@ export default function PrivacyModule() {
           </p>
           
           <div className="border-t border-purple-200 pt-4 space-y-3">
-          <p className="text-base font-semibold text-purple-900">
+          <p className="text-lg font-semibold text-purple-900">
             What can AI companies do with the information they collect from prompts?
           </p>
           <p className="text-base text-purple-800 leading-relaxed">
@@ -647,7 +647,7 @@ export default function PrivacyModule() {
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-2">Questions to Consider</p>
+          <p className="text-lg font-semibold text-gray-900 mb-2">Questions to Consider</p>
           <div className="space-y-3">
             {[
               "Did seeing the possible route of a prompt change how you think about using AI tools?",
@@ -666,7 +666,7 @@ export default function PrivacyModule() {
 
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-green-900 mb-4">
+          <p className="text-lg font-semibold text-green-900 mb-4">
             What You Can Do
           </p>
 
@@ -695,7 +695,7 @@ export default function PrivacyModule() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More / Sources</p>
           <div className="space-y-2">
             {[
             {

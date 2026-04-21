@@ -109,7 +109,7 @@ export default function BiasModule() {
 
         {/* Explanation */}
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-3">
-          <p className="text-base font-semibold text-purple-900">
+          <p className="text-lg font-semibold text-purple-900">
             What is Latent Gaze showing you?
           </p>
           <p className="text-base text-purple-800 leading-relaxed">
@@ -121,7 +121,7 @@ export default function BiasModule() {
 
         
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-3">
+            <p className="text-lg font-semibold text-purple-900 mb-3">
               Why does this matter?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
@@ -143,7 +143,7 @@ export default function BiasModule() {
 
         {/* Reflection */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">
+          <p className="text-lg font-semibold text-gray-900 mb-4">
             Questions to Consider
           </p>
           <div className="space-y-3">
@@ -160,7 +160,7 @@ export default function BiasModule() {
 
         {/* What You Can Do */}
         <div className="bg-green-50 border border-green-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-green-900 mb-4">
+          <p className="text-lg font-semibold text-green-900 mb-4">
             What You Can Do
           </p>
 
@@ -183,7 +183,7 @@ export default function BiasModule() {
 
         {/* Learn More */}
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">Learn More / Sources</p>
+          <p className="text-lg font-semibold text-gray-900 mb-4">Learn More / Sources</p>
 
           <div className="space-y-5">
             <div>
