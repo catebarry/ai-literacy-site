@@ -152,27 +152,27 @@ export default function DeepfakesModule() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Question whether the content you see online is real</span>
+              <span>Question whether the content you see online is real.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Look for visual clues that indicate the content might be fake, but don't rely on these alone</span>
+              <span>Look for visual clues that indicate the content might be fake, but don't rely on these alone.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Check who first created or shared the content</span>
+              <span>Check who first created or shared the content.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Talk about it with others if you are unsure </span>
+              <span>Talk about it with others if you are unsure. </span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Be transparent and get permission if you are creating or sharing AI content</span>
+              <span>Be transparent and get permission if you are creating or sharing AI content.</span>
             </li>
 
           </ul>
