@@ -167,15 +167,15 @@ export default function BiasModule() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Ask who built a system and what their incentives are</span>
+              <span>Ask who built a system and what their incentives are.</span>
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Ask what data a system was trained on and recognize that bias in AI is not always intentional</span>
+              <span>Ask what data a system was trained on and recognize that bias in AI is not always intentional.</span>
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Be skeptical of AI outputs used in high-stakes decisions like hiring, financial lending, or healthcare</span>
+              <span>Be skeptical of AI outputs used in high-stakes decisions like hiring, financial lending, or healthcare.</span>
             </li>
 
           </ul>
