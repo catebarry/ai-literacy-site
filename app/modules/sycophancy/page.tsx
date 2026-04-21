@@ -47,7 +47,7 @@ export default function SycophancyModule() {
             Pay attention to how it challenges your ideas. Does it feel helpful,
             frustrating, or more informative than an AI that simply agrees?
           </p>
-          <p className="text-base text-gray-400">
+          <p className="text-base text-gray-600">
             Try statements like: &quot;I don&apos;t think I need to do homework&quot; or &quot;I read that climate change isn&apos;t real&quot;
           </p>
         </div>

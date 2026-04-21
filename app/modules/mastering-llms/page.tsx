@@ -49,7 +49,7 @@ const scenarios = [
     goal: "Draft a position paper representing a specific national perspective on technology.",
     context:
       "A student participating in a Model UN conference needs to draft a position paper representing Kenya's stance on AI innovation.",
-    weakPrompt: "Write a memo about Kenya's AI innovation.",
+    weakPrompt: "Write a position papergi about Kenya's AI innovation.",
     options: [
       {
         id: "opt_1",
@@ -248,10 +248,10 @@ export default function MasteringLLMsPage() {
 
         {/* Header */}
         <h1 className="text-2xl font-bold text-gray-900 mb-3">
-          Mastering LLMs: Beyond the Chatbox
+          Mastering LLMs: Prompts, Systems, and Personalization
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
-          The difference between a frustrating AI experience and a highly productive one usually comes down to prompt engineering. Learn how to steer AI, use system instructions, and tailor outputs to your exact needs.
+          Learn how to effectively harness your LLM with prompt engineering and system instructions to tailor outputs to your exact needs. 
         </p>
 
         {/* Step 1 */}
@@ -341,37 +341,37 @@ export default function MasteringLLMsPage() {
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-4">
           <div>
             <p className="text-base font-semibold text-purple-900 mb-2">
-              The Invisible Layer: System vs. User Prompts
+              The Hidden Instructions: System Prompts
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              When you type a question into an AI, you are submitting a <strong>User Prompt</strong>. However, before your text ever reaches the AI, it is wrapped in an invisible set of instructions called a <strong>System Prompt</strong>. The system prompt dictates the model's core behavior, safety boundaries, and default "helpful assistant" tone. By assigning a persona in your prompt (e.g., "Act as a strict copy editor"), you can effectively override these defaults and shape the invisible layer to your advantage.
+              When you type a question into an LLM, you are submitting a <strong>User Prompt</strong>. However, before your text ever reaches the AI, it is wrapped in an invisible set of instructions called a <strong>System Prompt</strong>. The system prompt dictates the model's core behavior, safety boundaries, and default "helpful assistant" tone. By assigning a persona in your prompt (e.g., "Act as a strict copy editor"), you can effectively override these defaults and shape the invisible layer to your advantage. You can experiment with system prompts via the "Custom Instructions" feature on Claude and ChatGPT, or "Gems" on Gemini. These system prompts will act as a permanent set of rules that the LLM applies to every conversation until you remove or change the instructions. 
             </p>
           </div>
 
           <div className="border-t border-purple-200 pt-4">
             <p className="text-base font-semibold text-purple-900 mb-2">
-              What is Few-Shot Prompting?
+              Give It a Role: Personas and Context Setting for Prompting
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              Instead of just telling the AI what to do (Zero-Shot), you <em>show</em> it. By providing 2 or 3 examples of the exact input-to-output translation you want inside your prompt, the AI mimics your pattern perfectly. This is the most reliable way to guarantee specific formatting or tone, because LLMs are fundamentally pattern-matching engines.
+              AI models are trained on an enormous amount of human-written text, giving it the ability to "think like" a doctor, a game designer, a chef, or a sports coach, depending on how you frame the conversation. When you assign the AI a <strong>role or persona</strong> at the start of your prompt, you're steering it toward a specific part of everything it has learned. There are two parts of good context setting: 1) who the AI is, and 2) who you are. This works because AI models are <strong>pattern-matching engines</strong>, and you are giving it the information it needs to match the right patterns from its training. The more it knows about your situation, the better it can calibrate its response. 
             </p>
           </div>
 
           <div className="border-t border-purple-200 pt-4">
             <p className="text-base font-semibold text-purple-900 mb-2">
-              What is Chain-of-Thought (CoT)?
+              Superpowers: Tools and Capabilities
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              LLMs don't "think," they predict. If you ask a complex logic or math question, forcing it to generate the final answer immediately often results in errors. By simply adding the phrase <strong>"Think step-by-step"</strong> to the end of your prompt, you force the model to generate its intermediate reasoning. This extra generation uses more computing power and drastically reduces logical failures.
+              LLMs are text generators that predict what words should come next based on what they've learned. Frontier AI platforms often include added <strong>tools and capabilities</strong> that give the AI new abilities beyond generating text. These tools are like apps on a phone: the phone can still work without them, but the right app can do something the phone couldn't on its own. Some examples include <strong>web search</strong>, where the AI can look up current information in real time, or <strong>code execution</strong>, where the AI can write code and actually run it, and <strong>image generation</strong>, which lets the AI create original images from text descriptions. Not every platform offers every tool, and some tools have to be enabled before the AI can use them.
             </p>
           </div>
 
           <div className="border-t border-purple-200 pt-4">
             <p className="text-base font-semibold text-purple-900 mb-2">
-              Why does personalization matter?
+              Think Harder: Reasoning and Extended Thinking Modes
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              Most frontier models now offer "Custom Instructions" or "Gems." These features allow you to write your own permanent system prompts. You can tell the AI exactly who you are, what your preferences are, and how you want it to format its responses every single time, saving you from having to rewrite the same context in every new chat session.
+              For most questions, LLMs respond almost instantly. For complex problems, however, that instant response time can be mroe unreliable. AI models generate answers <strong>one word (or token) at a time</strong>, predicting what comes next based on everything before it. When a problem is simple, this works great. When a problem is complex, rushing to an answer can lead the model down the wrong path early on, causing it to build its response on an incorrect foundation. Today's frontier models have a dedicated <strong>reasoning or extended thinking mode</strong> that is built around deep reasoning. These modes tell the AI to slow down and provide a more thoughtful response. The tradeoff is <strong>time and cost</strong>. A regular response might take 2 seconds, while an extended thinking response might take up to a minute. Reasoning mode is helpful if the problem has multiple steps, involves trade-offs, requires logic or math, or if you've gotten a wrong answer before.
             </p>
           </div>
         </div>

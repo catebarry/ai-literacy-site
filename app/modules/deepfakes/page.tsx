@@ -19,7 +19,7 @@ export default function DeepfakesModule() {
           Deepfakes: AI-Generated Fake Media
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
-          AI can now generate images, audio, and video that look and sound realistic.
+          AI can now generate images, audio, and videos that look and sound realistic.
           These &quot;deepfakes&quot; can be used to spread misinformation, manipulate public
           opinion, and make it harder to know what is real. Learning how to question
           media is an important part of AI literacy.
@@ -44,7 +44,7 @@ export default function DeepfakesModule() {
             As you play, pay attention to details like lighting, skin texture, hair,
             backgrounds, and anything that looks slightly unusual or inconsistent.
           </p>
-          <p className="text-base text-gray-400">
+          <p className="text-base text-gray-600">
             After a few rounds, ask yourself: how confident were you, and were you
             actually right?
           </p>
