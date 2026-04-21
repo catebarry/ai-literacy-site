@@ -368,10 +368,10 @@ export default function MasteringLLMsPage() {
 
           <div className="border-t border-purple-200 pt-4">
             <p className="text-base font-semibold text-purple-900 mb-2">
-              Remember Me: Memory and Persistent Context
+              Think Harder: Reasoning and Extended Thinking Modes
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              Most frontier models now offer "Custom Instructions" or "Gems." These features allow you to write your own permanent system prompts. You can tell the AI exactly who you are, what your preferences are, and how you want it to format its responses every single time, saving you from having to rewrite the same context in every new chat session.
+              For most questions, LLMs respond almost instantly. For complex problems, however, that instant response time can be mroe unreliable. AI models generate answers <strong>one word (or token) at a time</strong>, predicting what comes next based on everything before it. When a problem is simple, this works great. When a problem is complex, rushing to an answer can lead the model down the wrong path early on, causing it to build its response on an incorrect foundation. Today's frontier models have a dedicated <strong>reasoning or extended thinking mode</strong> that is built around deep reasoning. These modes tell the AI to slow down and provide a more thoughtful response. The tradeoff is <strong>time and cost</strong>. A regular response might take 2 seconds, while an extended thinking response might take up to a minute. Reasoning mode is helpful if the problem has multiple steps, involves trade-offs, requires logic or math, or if you've gotten a wrong answer before.
             </p>
           </div>
         </div>
