@@ -5,6 +5,9 @@ The project emphasizes hands-on, experiential learning through activities that d
 
 **Live site:** https://ailiteracylab.vercel.app/
 
+## Preview
+![AI Literacy Lab Homepage](public/screenshots/homepage.png)
+
 ## Project Overview
 The website is structured as a set of interactive modules, each focused on a specific concept or risk in AI.
 
