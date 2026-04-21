@@ -503,22 +503,22 @@ export default function EnvironmentModule() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Use AI intentionally instead of automatically</span>
+              <span>Use AI intentionally instead of automatically.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Avoid repetitive or unnecessary AI tasks</span>
+              <span>Avoid repetitive or unnecessary AI tasks.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Keep requests simple when possible</span>
+              <span>Keep requests simple when possible.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Remember that small actions add up at scale</span>
+              <span>Remember that small actions add up at scale.</span>
             </li>
 
           </ul>
