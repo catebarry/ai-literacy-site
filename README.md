@@ -1,12 +1,12 @@
 # AI Literacy Lab
 An interactive educational website designed to help students and teachers understand how AI systems work and where they can go wrong.
 
-The goal of this project is to move beyond passive explanations and instead provide hands-on, experiential learning through activities that demonstrate real AI behaviors like hallucinations, sycophancy, bias, and more.
+The project emphasizes hands-on, experiential learning through activities that demonstrate real AI behaviors such as hallucinations, sycophancy, and bias. Users explore modules, complete activities, and build critical thinking skills for working with AI systems.
 
-Visit live public website: https://ailiteracylab.vercel.app/
+**Live site:** https://ailiteracylab.vercel.app/
 
 ## Project Overview
-The website contains a structured as a set of interactive modules, each focused on a specific concept or risk in AI.
+The website is structured as a set of interactive modules, each focused on a specific concept or risk in AI.
 
 Each module includes:
 - A guided interactive activity
@@ -14,10 +14,12 @@ Each module includes:
 - Reflection prompts to reinforce learning
 
 Tech Stack
-- Next.js (App Router)
+- Next.js
+- TypeScript
 - React
 - Tailwind CSS
 - Lucide Icons
+- Vercel (deployment)
 
 ## Getting Started
 
@@ -35,9 +37,16 @@ cd ai-literacy-site
 Then open: http://localhost:3000
 
 ### 4. Development
-Modify `page.tsx` files to edit the webpages. The folder path represents the url link. The page auto-updates as you edit the files.
+Edit `page.tsx` files to modify the webpages. Folder paths correspond to URL routes. Changes auto-update during development.
 
 ## AI Assistance Statement
 Portions of this project were developed with the assistance of AI tools, including OpenAI’s ChatGPT, Anthropic’s Claude, and GitHub Copilot. These tools supported implementation work in TypeScript and were also used to help refine ideas, structure content, and troubleshoot issues during development.
 
 All outputs were critically reviewed, tested, and revised by the authors, and all final design decisions, research, and implementations reflect our own work.
+
+## Project Context
+Developed as part of a group project for Duke University's Compsci 255: Introduction to Cyber Policy.
+
+**Authors:** Angela Feng, Catie Barry, Celia Lawlor, Griffin Hayward, Mia Kaarls, and Tess Gray
+
+MIT License
