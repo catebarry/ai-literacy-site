@@ -9,7 +9,7 @@ const HALLUCINATION_TYPES = [
   { id: "citation", label: "Citation Fabrication", color: "#f97316" },
   { id: "selfcontradiction", label: "Self-Contradiction", color: "#8b5cf6" },
   { id: "prompt", label: "Prompt-Contradiction", color: "#6366f1" },
-  { id: "procedural", label: "Procedural/Logic Error", color: "#10b981" },
+  { id: "procedural", label: "Procedural/Logical Error", color: "#10b981" },
   { id: "temporal", label: "Temporal Hallucination", color: "#3b82f6" },
 ];
 
