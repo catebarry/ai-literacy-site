@@ -335,7 +335,7 @@ export default function HallucinationsModule() {
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
           AI hallucination is the term we use to broadly classify inaccurate or fabricated
-          information output by an AI system. LLMs work by predicting the statistically most
+          information output by an AI system. Large Language Models (LLMs) work by predicting the statistically most
           likely next word based on patterns in training data. When a model encounters a gap
           in its data, it often fills the gap with something that sounds plausible rather than
           admitting uncertainty.
@@ -355,7 +355,8 @@ export default function HallucinationsModule() {
           <p className="text-base text-gray-600 leading-relaxed mb-3">
             Each round shows a real AI-generated passage on an educational topic. One sentence
             in each passage is hallucinated. Click the sentence you think is wrong, then
-            classify what type of hallucination it is.
+            classify what type of hallucination it is. The different types of hallucinations are listed
+            below.
           </p>
           <p className="text-base text-gray-600 leading-relaxed">
             After each guess, you will see an explanation of why the sentence is or is not a
@@ -394,21 +395,19 @@ export default function HallucinationsModule() {
 
         {/* Purple Understand section */}
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-4">
-          <div>
-            <p className="text-base font-semibold text-purple-900 mb-2">What Are AI Hallucinations?</p>
+          {/* <div>
+            <p className="text-base font-semibold text-purple-900 mb-2">What are AI hallucinations?</p>
             <p className="text-base text-purple-800 leading-relaxed">
-              AI hallucination is the term we use to broadly classify inaccurate or fabricated
+              As stated above, AI hallucination is the term we use to broadly classify inaccurate or fabricated
               information output by an AI system. That said, the very use of the word
               "hallucinate" to describe AI failures is misleading and anthropomorphizes a
               phenomenon with no human analog. LLMs work by predicting the statistically most
-              likely next word based on patterns in training data. When a model encounters a
-              gap in its data, it often fills the gap with something that sounds plausible
-              rather than admitting uncertainty.
+              likely next word based on patterns in training data.
             </p>
-          </div>
+          </div> */}
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-2">Why This Matters</p>
+            <p className="text-base font-semibold text-purple-900 mb-2">Why hallucinations matters</p>
             <p className="text-base text-purple-800 leading-relaxed mb-3">
               In educational contexts, overtrusting AI output can lead to unintended research
               malpractices, such as the falsification of sources and citations, and the
@@ -424,32 +423,32 @@ export default function HallucinationsModule() {
           </div>
 
           <div className="border-t border-purple-200 pt-4">
-            <p className="text-base font-semibold text-purple-900 mb-4">Types of Hallucinations to Look Out For</p>
+            <p className="text-base font-semibold text-purple-900 mb-4">Types of hallucinations to look out for</p>
             <div className="space-y-4">
               <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Factual Inaccuracies</p>
-                <p className="text-base text-purple-800 leading-relaxed">When AI presents something as fact, despite it being wrong. Factual inaccuracies are difficult to spot without domain expertise in the subject at hand. A subcategory of factual inaccuracy is temporal hallucination, which describes when an AI misrepresents a timeline of events or attributes information to a source that could not have discussed the topic at the time of its publication (e.g., citing a 2009 book as a source on COVID-19).</p>
+                <p className="text-base font-medium text-purple-900 mb-1">Factual inaccuracies</p>
+                <p className="text-base text-purple-800 leading-relaxed">A factual inaccuracy is when AI presents something as fact, despite it being wrong. Factual inaccuracies are difficult to spot without domain expertise in the subject at hand. A subcategory of factual inaccuracy is temporal hallucination, which describes when an AI misrepresents a timeline of events or attributes information to a source that could not have discussed the topic at the time of its publication (e.g., citing a 2009 book as a source on COVID-19).</p>
               </div>
               <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Citation/Source Fabrication</p>
-                <p className="text-base text-purple-800 leading-relaxed mb-2">When AI invents nonexistent academic references. Despite improvements with each model, a study found that out of 732 citations provided by ChatGPT, 51% were entirely fabricated.</p>
-                <p className="text-base text-purple-800 leading-relaxed">One challenge to identification is that fabricated citations often combine real elements, such as an actual journal or author&apos;s name, just with invented titles or dates.</p>
+                <p className="text-base font-medium text-purple-900 mb-1">Citation/source fabrication</p>
+                <p className="text-base text-purple-800 leading-relaxed mb-2">Citation/source fabrication is when AI invents nonexistent academic references. Despite improvements with each model, a study found that out of 732 citations provided by ChatGPT, 51% were entirely fabricated.</p>
+                <p className="text-base text-purple-800 leading-relaxed">One challenge to identification is that fabricated citations often combine real elements, such as an actual journal or author&apos;s name, with invented titles or dates.</p>
               </div>
               <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Self-Contradiction</p>
+                <p className="text-base font-medium text-purple-900 mb-1">Self-contradiction</p>
                 <p className="text-base text-purple-800 leading-relaxed">Often, a sentence generated by AI sounds right on the first read through, but under close inspection, internal inconsistencies can be observed. An example of self-contradiction could look like the following: &quot;The moon generates its own light by absorbing sunlight from the sun&apos;s core.&quot; How can the moon generate its own light if the light is coming from the sun?</p>
               </div>
               <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Prompt-Contradiction</p>
-                <p className="text-base text-purple-800 leading-relaxed">When the output directly contradicts the user&apos;s input. A common instance of prompt contradictions is when a user asks an AI NOT to include anything about a certain topic or subject, and the very inclusion of the unwanted material leads to it being not only included but also overrepresented in the AI output.</p>
+                <p className="text-base font-medium text-purple-900 mb-1">Prompt-contradiction</p>
+                <p className="text-base text-purple-800 leading-relaxed">Prompt-contradiction is when the output directly contradicts the user&apos;s input. A common instance of prompt contradictions is when a user specifically asks AI not to include anything about a certain topic or subject, and it does so anyway. This leads to material being included despite the user&apos;s explicit request, as well as the included material being overrepresented.</p>
               </div>
               <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Visual Distortion (Images)</p>
-                <p className="text-base text-purple-800 leading-relaxed">Common in AI image or video generation, where human subjects are seen with extra or missing fingers and distorted background environments. These visual cues are becoming more and more unrecognizable as models improve, which brings an entirely different issue: how can you distinguish real from AI-generated content?</p>
+                <p className="text-base font-medium text-purple-900 mb-1">Visual distortion (images)</p>
+                <p className="text-base text-purple-800 leading-relaxed">Visual distortion is common in AI image or video generation, where human subjects are seen with extra or missing fingers and distorted background environments. These visual cues are becoming more and more unrecognizable as models improve, which brings an entirely different issue: how can you distinguish real content from AI-generated content?</p>
               </div>
               <div>
-                <p className="text-base font-medium text-purple-900 mb-1">Procedural/Logic Errors</p>
-                <p className="text-base text-purple-800 leading-relaxed mb-2">Most common in STEM-related responses when an AI confuses steps in a process or reaches conclusions without a clear logical progression. In programming, this can look like the use of a function that doesn&apos;t exist in a library.</p>
+                <p className="text-base font-medium text-purple-900 mb-1">Procedural/logical errors</p>
+                <p className="text-base text-purple-800 leading-relaxed mb-2">These are most common in STEM-related responses, when AI confuses steps in a process or reaches conclusions without a clear logical progression. In programming, this can look like the use of a function that doesn&apos;t exist in a library.</p>
                 <p className="text-base text-purple-800 leading-relaxed">When it comes to hallucinations in writing, non sequiturs also fall under this category, where an AI makes logical jumps that do not follow from preceding reasoning.</p>
               </div>
             </div>
@@ -466,7 +465,7 @@ export default function HallucinationsModule() {
         </div>
 
         <div className="bg-white border border-gray-200 rounded-lg p-6 mb-4">
-          <p className="text-base font-semibold text-gray-900 mb-4">Reflect on What You Saw</p>
+          <p className="text-base font-semibold text-gray-900 mb-4">Questions to Consider</p>
           <div className="space-y-3">
             <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">Which hallucination type was hardest for you to identify? What made it difficult?</div>
             <div className="border border-gray-200 rounded-md p-4 bg-gray-50 text-base text-gray-700">If you were writing an essay and an AI gave you a citation that looked real, what steps would you take before including it?</div>
@@ -489,7 +488,7 @@ export default function HallucinationsModule() {
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Play to AI strengths: use it for brainstorming, outlining, editing, and summarizing. Avoid relying on it to retrieve specific factual claims or generate accurate citations.</span>
+              <span>Play to AI&apos;s strengths: use it for brainstorming, outlining, editing, and summarizing. Avoid relying on it to retrieve specific factual claims or generate accurate citations.</span>
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
