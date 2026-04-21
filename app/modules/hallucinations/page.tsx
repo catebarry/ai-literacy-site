@@ -407,7 +407,7 @@ export default function HallucinationsModule() {
           </div> */}
 
           {/* <div className="border-t border-purple-200 pt-4"> */}
-            <p className="text-base font-semibold text-purple-900 mb-2">Why hallucinations matters</p>
+            <p className="text-base font-semibold text-purple-900 mb-2">Why hallucinations matter</p>
             <p className="text-base text-purple-800 leading-relaxed mb-3">
               In educational contexts, overtrusting AI output can lead to unintended research
               malpractices, such as the falsification of sources and citations, and the
