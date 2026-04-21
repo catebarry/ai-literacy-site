@@ -673,22 +673,22 @@ export default function PrivacyModule() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Be mindful of the information you share with AI tools</span>
+              <span>Be mindful of the information you share with AI tools.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Ask questions about data usage, retention, and sharing</span>
+              <span>Ask questions about data usage, retention, and sharing.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Know the terms and conditions that apply to the products you use</span>
+              <span>Know the terms and conditions that apply to the products you use.</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Advocate for transparency and accountability in AI systems</span>
+              <span>Advocate for transparency and accountability in AI systems.</span>
             </li>
           </ul>
         </div>
