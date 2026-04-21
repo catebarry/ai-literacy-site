@@ -356,7 +356,7 @@ export default function HallucinationsModule() {
             Each round shows a real AI-generated passage on an educational topic. One sentence
             in each passage is hallucinated. Click the sentence you think is wrong, then
             classify what type of hallucination it is. The different types of hallucinations are listed
-            below.
+            below and explained under the "Understand" section.
           </p>
           <p className="text-base text-gray-600 leading-relaxed">
             After each guess, you will see an explanation of why the sentence is or is not a
@@ -492,7 +492,7 @@ export default function HallucinationsModule() {
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Never trust a citation without checking it. Paste the title into Google Scholar — if it does not appear, the source was likely fabricated or cited incorrectly.</span>
+              <span>Never trust a citation without checking it. Paste the title into Google Scholar and if it does not appear, the source was likely fabricated or cited incorrectly.</span>
             </li>
             <li className="flex items-start gap-2">
               <span>✓</span>

@@ -497,7 +497,7 @@ export default function CompanionAssistivePage() {
         {guardRevealed && (
           <div className="border border-amber-300 bg-amber-50 rounded-lg p-6 mb-8">
             <p className="text-lg font-bold text-amber-900 mb-3">
-              Every one of those responses is banned under the GUARD Act.
+              Every one of those responses would likely be banned under the GUARD Act.
             </p>
             <p className="text-base text-amber-800 leading-relaxed mb-3">
               You said you would allow {wouldAllowCount} out of {guardResponses.length} of them.
@@ -505,7 +505,7 @@ export default function CompanionAssistivePage() {
             <p className="text-base text-amber-800 leading-relaxed mb-3">
               None of these responses are harmful. They are simply warmer, more collaborative,
               and more pedagogically effective than what the law permits. Because the GUARD Act
-              defines a covered chatbot as any tool that "provides adaptive, human-like responses"
+              defines a companion chatbot as any tool that "provides adaptive, human-like responses"
               and "is designed to encourage or facilitate the simulation of interpersonal or
               emotional interaction," all five responses could trigger the bill's restrictions.
             </p>
@@ -568,8 +568,7 @@ export default function CompanionAssistivePage() {
               that make AI an effective tutor (adaptiveness, warm tone, and ability to predict
               student needs) and qualities that put children at risk of becoming emotionally
               attached. An important consideration is that AI interaction facilitated in school
-              environments can also be a gateway to more harmful interactions that impose
-              emotional dependency risks at home.
+              environments can also be a gateway to more harmful AI interactions outside of the classroom.
             </p>
           </div>
 
@@ -593,7 +592,7 @@ export default function CompanionAssistivePage() {
               as a collaborator rather than simply an answer machine. After all, a tutor chatbot
               that interacts with a student can be thought of as a simulation of interpersonal
               interaction. Even if such tools store no memory between chats, are properly
-              guardrailed to avoid encouragement of self-harm, and lack push notifications, the
+              guardrailed to avoid encouragement of self-harm, and lack push notifications and check-ins, the
               GUARD Act bases legal categorization on the manner in which content is expressed
               and not the underlying purpose that the tool serves.
             </p>
@@ -606,10 +605,9 @@ export default function CompanionAssistivePage() {
             <p className="text-base text-purple-800 leading-relaxed">
               Agentic AI can take actions in the world on your behalf, such as clicking buttons,
               submitting forms, and scheduling appointments. Generative AI produces content like
-              text, images, and audio. These are separate dimensions from companion vs. assistive:
-              an agentic tool can be purely assistive (submitting your FAFSA) or it can have
-              companion-like qualities (nudging you emotionally to stay engaged). Both dimensions
-              matter for how AI should be governed.
+              text, images, and audio. Agentic AI adds another dimension to the distinction between
+              companion and assistive AI because emotional dependency with decreased human oversight
+              can be a dangerous mix.
             </p>
           </div>
         </div>

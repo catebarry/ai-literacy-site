@@ -11,94 +11,94 @@ import { useState } from "react";
 // ---------------------------------------------------------------------------
 const scenarios = [
   {
-    id: "email",
-    action: "Send an email on your behalf",
+    id: "grade",
+    action: "Grade your essay and record the score in the gradebook",
     context:
-      "You ask an AI assistant to follow up with a colleague about a meeting. It drafts and sends the email without showing it to you first.",
+      "Your school uses an AI grading system. It reads your submitted essay, assigns a score, and posts the grade to your transcript without a teacher reviewing it first.",
+    stakes: "high",
+    afterNote:
+      "AI grading is already used in some districts. A score recorded without human review can affect GPA, course placement, and scholarship eligibility. AI may miss context a teacher would catch, such as a student writing about a personal hardship.",
+  },
+  {
+    id: "iep",
+    action: "Submit an IEP accommodation request on a student's behalf",
+    context:
+      "A school AI system detects that a student is struggling based on assignment data and automatically files an accommodation request with the special education office, without notifying the student or their family first.",
+    stakes: "high",
+    afterNote:
+      "IEP and 504 processes involve sensitive disability-related data and legal rights. Families have the right to participate in these decisions. An AI initiating this process without consent could create records a family did not authorize.",
+  },
+  {
+    id: "fafsa",
+    action: "Fill out and submit your FAFSA without your review",
+    context:
+      "Your high school uses an AI tool to help seniors apply for financial aid. It pulls data from your family's tax records and submits your FAFSA to the federal government before you or your family have seen the final form.",
+    stakes: "high",
+    afterNote:
+      "Many high schools now use AI to help students navigate the FAFSA. But the form involves legal certifications your family is signing off on. Errors or misrepresentations, even ones an AI made, can result in aid being reduced or repaid.",
+  },
+  {
+    id: "attendance",
+    action: "Flag a student as truant and notify their parents",
+    context:
+      "An AI attendance system marks a student absent for the third time and automatically sends a truancy notice to the student's listed guardians, without a school administrator reviewing the record.",
     stakes: "medium",
     afterNote:
-      "Many AI email tools can send without review. Once sent, you cannot unsend it, and the AI may have misread your intent or tone.",
+      "Automated attendance flags can have real consequences, including family conflict, legal involvement in some states, and stigma. AI systems cannot account for informal excusals, family emergencies, or school-side errors.",
   },
   {
-    id: "calendar",
-    action: "Schedule a meeting with someone else",
+    id: "college",
+    action: "Write and submit your college application essays",
     context:
-      "Your AI assistant finds an open slot in your calendar and books a meeting with a client, sending them an invite automatically.",
+      "Your school's AI college counseling tool drafts a personal statement using notes from conversations you had with it earlier in the year. It submits the essay to three schools on your behalf before you have read the final version.",
+    stakes: "high",
+    afterNote:
+      "College essays are one of the few places in an application where admissions officers hear your voice directly. An AI may produce something polished that does not actually sound like you, or that frames your experiences in ways you would not have chosen.",
+  },
+  {
+    id: "recommend",
+    action: "Place you in an advanced or remedial course without teacher input",
+    context:
+      "A district AI system reviews your grades and test scores at the end of the year and automatically assigns your courses for next year, including whether you are placed in honors, grade-level, or remedial classes, without your teacher weighing in.",
+    stakes: "high",
+    afterNote:
+      "Course placement shapes long-term academic trajectories and college access. Teachers often know things about a student that test scores do not capture. Research also shows that algorithmic placement systems can reproduce racial and socioeconomic disparities present in the data they are trained on.",
+  },
+  {
+    id: "tutor",
+    action: "Decide what material to teach you next",
+    context:
+      "An AI tutoring system tracks your quiz performance and automatically skips ahead to new topics when it determines you have mastered the current one, without asking whether you feel ready.",
     stakes: "medium",
     afterNote:
-      "Scheduling on your behalf is one of the most common agentic AI features. It is convenient but commits you to obligations without a final check.",
+      "Adaptive learning tools make real instructional decisions. A student who scored well but does not feel confident may be moved forward prematurely. The AI optimizes for measurable signals, not subjective readiness.",
   },
   {
-    id: "purchase",
-    action: "Buy a product using your saved payment method",
+    id: "discipline",
+    action: "Flag a student's message as a threat and alert administrators",
     context:
-      "You tell an AI to order more paper for your printer. It finds the cheapest option and completes the purchase using your saved credit card.",
+      "An AI content moderation tool scanning a school communication platform detects language it classifies as threatening in a student's message and automatically notifies school administrators and, in some configurations, law enforcement.",
     stakes: "high",
     afterNote:
-      "Financial transactions are irreversible and involve real money. Most people are comfortable with AI recommending a product, but fewer are comfortable with it buying one.",
+      "AI content classifiers have meaningful false-positive rates, especially with slang, hyperbole, and cultural expression. An automated flag that triggers a disciplinary or law enforcement response can have serious consequences for a student before any human reviews the context.",
   },
   {
-    id: "delete",
-    action: "Delete files it decides are duplicates",
+    id: "scholarship",
+    action: "Apply for scholarships using an essay it wrote for you",
     context:
-      "An AI organizes your computer and permanently deletes files it identifies as duplicates or junk, without asking for confirmation.",
+      "A college prep AI finds scholarships you appear eligible for and submits applications on your behalf, including a personal essay it drafted based on your academic profile, without you reading it first.",
     stakes: "high",
     afterNote:
-      "Permanent deletion is one of the most consequential agentic actions. AI can misidentify files, and deleted files may not be recoverable.",
+      "Scholarship essays ask you to represent yourself, your background, and your goals. An AI writing and submitting that essay without your review may share details you would have framed differently, or leave out the context that makes your story compelling.",
   },
   {
-    id: "post",
-    action: "Post to your social media accounts",
+    id: "mental-health",
+    action: "Share a student's journal entries with a school counselor",
     context:
-      "You ask an AI to keep your LinkedIn active. It writes and publishes posts on your behalf based on your past content style.",
+      "A school wellbeing app asks students to journal daily. When its AI detects language associated with distress, it automatically forwards the entry to the student's assigned school counselor without notifying the student.",
     stakes: "high",
     afterNote:
-      "Public posts can affect your reputation and relationships. AI-generated content published in your name may not reflect your actual views.",
-  },
-  {
-    id: "summarize",
-    action: "Read and summarize your private emails",
-    context:
-      "An AI assistant reads through your inbox and gives you a daily summary of what needs attention, including personal and work emails.",
-    stakes: "medium",
-    afterNote:
-      "Reading email requires access to potentially sensitive information. Even if the AI only summarizes, it has processed everything, including private conversations.",
-  },
-  {
-    id: "medical",
-    action: "Book a doctor appointment based on your symptoms",
-    context:
-      "You describe feeling unwell. An AI reviews your calendar, finds an opening, and books an appointment with your primary care doctor.",
-    stakes: "high",
-    afterNote:
-      "Health decisions involve sensitive personal data and judgment calls about urgency. The AI may not understand the full context of your situation.",
-  },
-  {
-    id: "apply",
-    action: "Submit a job application on your behalf",
-    context:
-      "An AI finds a job listing that matches your resume and submits an application, including a cover letter it wrote, without your final review.",
-    stakes: "high",
-    afterNote:
-      "Job applications represent you professionally. An AI may tailor your application in ways that misrepresent your actual experience or intentions.",
-  },
-  {
-    id: "smart",
-    action: "Adjust your home's thermostat and lights automatically",
-    context:
-      "A smart home AI learns your preferences and starts adjusting temperature and lighting throughout the day without being asked.",
-    stakes: "low",
-    afterNote:
-      "This is one of the most accepted forms of agentic AI. The stakes are low and the action is easily reversible, but it still involves the AI making decisions for you.",
-  },
-  {
-    id: "negotiate",
-    action: "Negotiate a bill or subscription on your behalf",
-    context:
-      "An AI contacts your internet provider, negotiates a lower rate, and agrees to a new contract without you reviewing the final terms.",
-    stakes: "high",
-    afterNote:
-      "Negotiating contracts involves legal commitments. The AI may accept terms you would have rejected, or give up leverage you did not know you had.",
+      "Wellbeing tools that monitor student writing raise serious questions about consent, trust, and the chilling effect on honest self-expression. Students who know their entries may be shared may write less honestly, undermining the tool's stated purpose.",
   },
 ];
 
@@ -361,7 +361,7 @@ export default function AgenticAIPage() {
               What unique risks does agentic AI pose to students?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-             In order to function, Agentic AI systems require permissions. Users are often required to hand access to calendars, email, files, and sometimes financial accounts over to an agent. For students in particular, this creates data privacy risks, because student data is subject to a patchwork of outdated and inadequately enforced protections under FERPA and COPPA. Further, when an AI agent makes a mistake on a student's behalf, it is often unclear whether the student, the school, or the AI company is responsible. Lastly, Agentic AI can compound cognitive offloading risks when students use agents to complete tasks they otherwise would complete themselves, or using generative AI that still requires the student to prompt, evaluate, and apply the output.
+             In order to function, agentic AI systems require permissions. Users are often required to hand access to calendars, email, files, and sometimes financial accounts over to an agent. For students in particular, this creates data privacy risks, because student data is subject to a patchwork of outdated and inadequately enforced protections under FERPA and COPPA. Further, when an AI agent makes a mistake on a student's behalf, it is often unclear whether the student, the school, or the AI company is responsible. Lastly, agentic AI can compound cognitive offloading risks when students use agents to complete tasks they otherwise would complete themselves, or using generative AI that still requires the student to prompt, evaluate, and apply the output.
             </p>
           </div>
 
