@@ -251,7 +251,7 @@ export default function MasteringLLMsPage() {
           Mastering LLMs: Prompts, Systems, and Personalization
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
-          The difference between a frustrating AI experience and a highly productive one usually comes down to prompt engineering. Learn how to steer AI, use system instructions, and tailor outputs to your exact needs.
+          Learn how to effectively harness your LLM with prompt engineering and system instructions to tailor outputs to your exact needs. 
         </p>
 
         {/* Step 1 */}
