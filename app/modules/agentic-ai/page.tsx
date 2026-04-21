@@ -233,8 +233,8 @@ export default function AgenticAIPage() {
           Agentic AI: When AI Takes Action
         </h1>
         <p className="text-base text-gray-600 leading-relaxed mb-10">
-          How much should AI be allowed to do on its own? And should minors
-          have access to agentic AI tools, and under what conditions? 
+          How much should AI be allowed to do on its own? Should minors
+          have access to agentic AI tools? If so, under what conditions? 
         </p>
 
         {/* Step 1 */}
@@ -352,7 +352,7 @@ export default function AgenticAIPage() {
               Why does autonomy level matter in educational contexts?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              
+              As a general rule, the more autonomy an AI has, the more consequential its errors become. Most generative AI mistakes, such as a wrong answer or confusing response, are fixable and, for the most part, less likely to cause the user significant harm. Agentic mistakes, on the other hand, are often harder to undo or harder to notice, especially when an agent is being used with minimal human oversight. This matters especially in educational settings because students are still developing independent skills and may lack understanding for how an agent achieves a desired goal. 
             </p>
           </div>
 
@@ -361,7 +361,7 @@ export default function AgenticAIPage() {
               What unique risks does agentic AI pose to students?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-             
+             In order to function, Agentic AI systems require permissions. Users are often required to hand access to calendars, email, files, and sometimes financial accounts over to an agent. For students in particular, this creates data privacy risks, because student data is subject to a patchwork of outdated and inadequately enforced protections under FERPA and COPPA. Further, when an AI agent makes a mistake on a student's behalf, it is often unclear whether the student, the school, or the AI company is responsible. Lastly, Agentic AI can compound cognitive offloading risks when students use agents to complete tasks they otherwise would complete themselves, or using generative AI that still requires the student to prompt, evaluate, and apply the output.
             </p>
           </div>
 
@@ -370,7 +370,7 @@ export default function AgenticAIPage() {
               What unique benefits does agentic AI promise?
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              
+              Completing a FAFSA, requesting an IEP accommodation, or applying for a scholarship involves navigating complex bureaucratic systems that heavily favor students with knowledgeable parents or access to counselors and support systems. An agentic AI that can guide or complete those steps offers a form of access equity that generative AI doesn’t provide. Agentic systems like Kira, which have been deployed in Tennessee and other states, also promise to reduce administrative burden on teachers, which frees up time for them to focus on the human-centered parts of education that AI cannot replicate as well.
             </p>
           </div>
         </div>
@@ -387,7 +387,11 @@ export default function AgenticAIPage() {
           <p className="text-base font-semibold text-gray-900 mb-4">Questions to Consider</p>
           <div className="space-y-3">
             {[
-             ,
+              "What would it take for you to trust an AI to act fully on your behalf?",
+              "How much should a student understand about how an agent is pursuing a goal before allowing it to take action?",
+              "How might using an agent provide an advantage that students without access to an agent don't have?",
+              "At what age or developmental stage should students be permitted to delegate decisions to an AI agent?",
+
             ].map((question) => (
               <div
                 key={question}
