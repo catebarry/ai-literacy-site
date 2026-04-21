@@ -32,7 +32,7 @@ export default function AboutPage() {
                 {[
                   "Experiment with real AI concepts in a safe environment",
                   "Learn to identify AI errors and limitations",
-                  "Reflect on ethical questions and real-world implications",
+                  "Reflect on questions about ethics and real-world implications",
                   "Develop skills for responsible AI use",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-4 text-base text-gray-600">
