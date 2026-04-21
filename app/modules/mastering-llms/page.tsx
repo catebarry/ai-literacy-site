@@ -341,19 +341,19 @@ export default function MasteringLLMsPage() {
         <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 mb-4 space-y-4">
           <div>
             <p className="text-base font-semibold text-purple-900 mb-2">
-              The Invisible Layer: System vs. User Prompts
+              The Hidden Instructions: System Prompts
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              When you type a question into an AI, you are submitting a <strong>User Prompt</strong>. However, before your text ever reaches the AI, it is wrapped in an invisible set of instructions called a <strong>System Prompt</strong>. The system prompt dictates the model's core behavior, safety boundaries, and default "helpful assistant" tone. By assigning a persona in your prompt (e.g., "Act as a strict copy editor"), you can effectively override these defaults and shape the invisible layer to your advantage.
+              When you type a question into an AI, you are submitting a <strong>User Prompt</strong>. However, before your text ever reaches the AI, it is wrapped in an invisible set of instructions called a <strong>System Prompt</strong>. The system prompt dictates the model's core behavior, safety boundaries, and default "helpful assistant" tone. By assigning a persona in your prompt (e.g., "Act as a strict copy editor"), you can effectively override these defaults and shape the invisible layer to your advantage. You can experiment with system prompts via the "Custom Instructions" feature on Claude and ChatGPT, or "Gems" on Gemini. These system prompts will act as a permanent set of rules that the LLM applies to every conversation until you remove or change the instructions. 
             </p>
           </div>
 
           <div className="border-t border-purple-200 pt-4">
             <p className="text-base font-semibold text-purple-900 mb-2">
-              What is Few-Shot Prompting?
+              Give It a Role: Personas and Context Setting for Prompting
             </p>
             <p className="text-base text-purple-800 leading-relaxed">
-              Instead of just telling the AI what to do (Zero-Shot), you <em>show</em> it. By providing 2 or 3 examples of the exact input-to-output translation you want inside your prompt, the AI mimics your pattern perfectly. This is the most reliable way to guarantee specific formatting or tone, because LLMs are fundamentally pattern-matching engines.
+              AI models are trained on an enormous amount of human-written text, giving it the ability to "think like" a doctor, a game designer, a chef, or a sports coach, depending on how you frame the conversation. When you assign the AI a <strong>role or persona</strong> at the start of your prompt, you're steering it toward a specific part of everything it has learned. There are two parts of good context setting: 1) who the AI is, and 2) who you are. This works because AI models are <strong>pattern-matching engines</strong>, and you are giving it the information it needs to match the right patterns from its training. The more it knows about your situation, the better it can calibrate its response. 
             </p>
           </div>
 
