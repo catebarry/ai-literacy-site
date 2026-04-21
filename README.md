@@ -45,7 +45,7 @@ Then open: http://localhost:3000
 Edit `page.tsx` files to modify the webpages. Folder paths correspond to URL routes. Changes auto-update during development.
 
 ## AI Assistance Statement
-Portions of this project were developed with the assistance of AI tools, including OpenAI’s ChatGPT, Anthropic’s Claude, and GitHub Copilot. These tools supported implementation work in TypeScript and were also used to help refine ideas, structure content, and troubleshoot issues during development.
+Portions of this project were developed with the assistance of AI tools, including OpenAI’s ChatGPT, Anthropic’s Claude, and GitHub Copilot. These tools supported implementation work in TypeScript and were also used to help refine ideas, structure and generate content for interactive activities, and troubleshoot issues during development.
 
 All outputs were critically reviewed, tested, and revised by the authors, and all final design decisions, research, and implementations reflect our own work.
 
