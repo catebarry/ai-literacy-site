@@ -152,12 +152,12 @@ export default function SycophancyModule() {
           <ul className="space-y-3 text-base text-green-800">
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Ask follow-up questions and demand evidence (e.g. “Are you sure?” “What evidence supports that?”)</span>
+              <span>Ask follow-up questions and demand evidence (e.g. “Are you sure?” “What evidence supports that?”).</span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Rephrase prompts to invite critique (e.g. “What are the weaknesses of this idea?” “What are the counter arguments?”)</span>
+              <span>Rephrase prompts to invite critique (e.g. “What are the weaknesses of this idea?” “What are the counter arguments?”).</span>
             </li>
 
             <li className="flex items-start gap-2">
@@ -172,18 +172,18 @@ export default function SycophancyModule() {
                 >
                   system prompts
                 </a>{" "}
-                to tell the AI to challenge your assumptions
+                to tell the AI to challenge your assumptions.
               </span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Use neutral phrasing and avoid leading questions </span>
+              <span>Use neutral phrasing and avoid leading questions. </span>
             </li>
 
             <li className="flex items-start gap-2">
               <span>✓</span>
-              <span>Reset your chat session to clear the context </span>
+              <span>Reset your chat session to clear the context. </span>
             </li>
           </ul>
         </div>
