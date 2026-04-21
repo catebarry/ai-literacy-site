@@ -69,7 +69,7 @@ export default function AboutPage() {
                 Contact & Feedback
               </h2>
               <p className="text-gray-600 text-base leading-relaxed mb-4">
-                The website is intended to evolve over time with new modules and activities 
+                The website is intended to evolve over time with new activities 
                 to reflect the rapidly changing AI landscape and user feedback.
                 We welcome your input to help shape the future of this project!
               </p>
