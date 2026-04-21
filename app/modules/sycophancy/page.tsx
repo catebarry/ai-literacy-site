@@ -129,7 +129,6 @@ export default function SycophancyModule() {
           </p>
           <div className="space-y-3">
             {[
-              "Which responses felt more convincing: agreement or disagreement?",
               "Did the disagreeable AI ever feel more useful, even if less comfortable?",
               "How might always agreeing with users be misleading?",
               "Where have you seen AI agree too easily in real life?",
