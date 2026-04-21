@@ -406,7 +406,7 @@ export default function HallucinationsModule() {
             </p>
           </div> */}
 
-          <div className="border-t border-purple-200 pt-4">
+          {/* <div className="border-t border-purple-200 pt-4"> */}
             <p className="text-base font-semibold text-purple-900 mb-2">Why hallucinations matters</p>
             <p className="text-base text-purple-800 leading-relaxed mb-3">
               In educational contexts, overtrusting AI output can lead to unintended research
@@ -420,7 +420,7 @@ export default function HallucinationsModule() {
               that phrases like "definitely," "certainly," and "without doubt" were 34% more
               likely to accompany incorrect information.
             </p>
-          </div>
+          {/* </div> */}
 
           <div className="border-t border-purple-200 pt-4">
             <p className="text-base font-semibold text-purple-900 mb-4">Types of hallucinations to look out for</p>
