@@ -49,7 +49,7 @@ const scenarios = [
     goal: "Draft a position paper representing a specific national perspective on technology.",
     context:
       "A student participating in a Model UN conference needs to draft a position paper representing Kenya's stance on AI innovation.",
-    weakPrompt: "Write a position papergi about Kenya's AI innovation.",
+    weakPrompt: "Write a position paper about Kenya's AI innovation.",
     options: [
       {
         id: "opt_1",
