@@ -131,13 +131,8 @@ function ScenarioCard({
 }) {
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-5 flex flex-col gap-4">
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex items-start gap-3">
         <p className="text-base font-semibold text-gray-900">{scenario.action}</p>
-        <span
-          className={`text-xs font-medium px-2 py-0.5 rounded shrink-0 ${stakesStyle(scenario.stakes)}`}
-        >
-          {stakesLabel(scenario.stakes)}
-        </span>
       </div>
 
       <p className="text-sm text-gray-600 leading-relaxed">{scenario.context}</p>
