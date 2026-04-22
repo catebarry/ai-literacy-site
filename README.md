@@ -11,7 +11,7 @@ The AI Literacy Lab is designed as an evolving, dynamic platform. As AI technolo
 ![AI Literacy Lab Homepage](public/screenshots/homepage.png)
 
 ## Project Overview
-The website is structured as a set of interactive modules, each focused on a specific concept or risk in AI.
+The website is structured as a set of interactive modules, each focused on a specific concept or risk in AI. 
 
 Each module includes:
 - A guided interactive activity
