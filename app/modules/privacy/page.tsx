@@ -630,7 +630,7 @@ export default function PrivacyModule() {
             it uses input data to train itself and improve its performance. This means your
             prompts can make the model better, but it also means you need to be careful what you
             tell it. In work-related settings, you need to be careful not to expose confidential
-            customer information or private company data. When using AI for in personal settings,
+            customer information or private company data. When using AI in personal settings,
             it is important not to share any information about yourself that you would not feel
             comfortable sharing with a stranger on the street.
           </p>
